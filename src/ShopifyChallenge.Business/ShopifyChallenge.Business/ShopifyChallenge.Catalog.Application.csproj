@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\ShopifyChallenge.Catalog.Domain\ShopifyChallenge.Catalog.Domain.csproj" />
+    <ProjectReference Include="..\..\ShopifyChallenge.Data\ShopifyChallenge.Catalog.Data.csproj" />
+    <ProjectReference Include="..\..\ShopifyChallenge.Sales.Application\ShopifyChallenge.Sales.Application.csproj" />
+  </ItemGroup>
+
+</Project>
