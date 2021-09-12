@@ -136,17 +136,17 @@ namespace ShopifyChallenge.Core.DomainObjects
             }
         }
 
-        public static void AssertStateTrue(bool boolvalue, string message)
+        public static void AssertStateTrue(bool boolValue, string message)
         {
-            if (!boolvalue)
+            if (!boolValue)
             {
                 throw new DomainException(message);
             }
         }
 
-        public static void AssertStateFalse(bool boolvalue, string message)
+        public static void AssertStateFalse(bool boolValue, string message)
         {
-            if (boolvalue)
+            if (boolValue)
             {
                 throw new DomainException(message);
             }

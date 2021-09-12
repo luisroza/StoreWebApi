@@ -1,6 +1,6 @@
-﻿using ShopifyChallenge.Core.Messages;
+﻿using FluentValidation;
+using ShopifyChallenge.Core.Communication;
 using System;
-using ShopifyChallenge.Core.DomainObjects.DTO;
 
 namespace ShopifyChallenge.Sales.Application.Events
 {
@@ -13,19 +13,54 @@ namespace ShopifyChallenge.Sales.Application.Events
         public string CardNumber { get; private set; }
         public string CardExpirationDate { get; private set; }
         public string CardVerificationCode { get; private set; }
-        public OrderItemList ItemList { get; private set; }
 
-        public StartOrderEvent(Guid customerId, Guid orderId, OrderItemList itemList, decimal total, string cardName, string cardNumber, string cardExpirationDate, string cardVerificationCode)
+        public StartOrderEvent(Guid orderId, Guid customerId, decimal total, string cardName, string cardNumber,
+            string cardExpirationDate, string cardVerificationCode)
         {
             AggregateId = orderId;
             CustomerId = customerId;
             OrderId = orderId;
-            ItemList = itemList;
             Total = total;
             CardName = cardName;
             CardNumber = cardNumber;
             CardExpirationDate = cardExpirationDate;
             CardVerificationCode = cardVerificationCode;
+        }
+
+        public override bool IsValid()
+        {
+            ValidationResult = new StartOrderValidation().Validate(this);
+            return ValidationResult.IsValid;
+        }
+    }
+
+    public class StartOrderValidation : AbstractValidator<StartOrderEvent>
+    {
+        public StartOrderValidation()
+        {
+            RuleFor(c => c.CustomerId)
+                .NotEqual(Guid.Empty)
+                .WithMessage("Customers' Id is invalid");
+
+            RuleFor(c => c.OrderId)
+                .NotEqual(Guid.Empty)
+                .WithMessage("Orders' Id is invalid");
+
+            RuleFor(c => c.CardName)
+                .NotEmpty()
+                .WithMessage("The on the card was not informed");
+
+            RuleFor(c => c.CardNumber)
+                .CreditCard()
+                .WithMessage("Card number is invalid");
+
+            RuleFor(c => c.CardExpirationDate)
+                .NotEmpty()
+                .WithMessage("Expiration date was not informed");
+
+            RuleFor(c => c.CardVerificationCode)
+                .Length(3, 4)
+                .WithMessage("Card verification code was not informed");
         }
     }
 }

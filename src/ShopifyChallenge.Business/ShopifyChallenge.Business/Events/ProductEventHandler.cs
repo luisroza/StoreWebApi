@@ -5,12 +5,10 @@ using ShopifyChallenge.Core.Communication.Mediator;
 using ShopifyChallenge.Core.Communication.Messages.IntegrationEvents;
 using System.Threading;
 using System.Threading.Tasks;
-using StartOrderEvent = ShopifyChallenge.Sales.Application.Events.StartOrderEvent;
 
 namespace ShopifyChallenge.Catalog.Application.Events
 {
-    public class ProductEventHandler : INotificationHandler<InventoryEvent>,
-        INotificationHandler<StartOrderEvent>,
+    public class ProductEventHandler : INotificationHandler<OrderStartedEvent>,
         INotificationHandler<OrderCancelledEvent>
     {
         private readonly IProductRepository _productRepository;
@@ -24,14 +22,7 @@ namespace ShopifyChallenge.Catalog.Application.Events
             _mediatorHandler = mediatorHandler;
         }
 
-        public async Task Handle(InventoryEvent message, CancellationToken cancellationToken)
-        {
-            var product = await _productRepository.GetById(message.AggregateId);
-
-            // TODO: Send an e-mail to the team warning them to buy more products
-        }
-
-        public async Task Handle(StartOrderEvent message, CancellationToken cancellationToken)
+        public async Task Handle(OrderStartedEvent message, CancellationToken cancellationToken)
         {
             var result = await _inventoryService.DecreaseInventoryProductList(message.ItemList);
 
@@ -48,7 +39,7 @@ namespace ShopifyChallenge.Catalog.Application.Events
 
         public async Task Handle(OrderCancelledEvent message, CancellationToken cancellationToken)
         {
-            await _inventoryService.ReplenishInventoryOrderProductsList(message.OrderProducts);
+            await _inventoryService.AddInventoryOrderProductsList(message.OrderProducts);
         }
     }
 }

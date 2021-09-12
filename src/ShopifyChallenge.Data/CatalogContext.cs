@@ -1,25 +1,24 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using ShopifyChallenge.Catalog.Domain;
+using ShopifyChallenge.Core.Communication;
+using ShopifyChallenge.Core.Data;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
-using ShopifyChallenge.Catalog.Domain;
-using ShopifyChallenge.Core.Data;
-using ShopifyChallenge.Core.Messages;
 
 namespace ShopifyChallenge.Catalog.Data
 {
     public class CatalogContext : DbContext, IUnitOfWork
     {
         //DbContextOptions will have some configuration on StartUp
-        public CatalogContext(DbContextOptions<CatalogContext> options)
-            : base(options) { }
+        public CatalogContext(DbContextOptions<CatalogContext> options) : base(options) { }
 
         public DbSet<Product> Products { get; set; }
-        public DbSet<Category> Categories { get; set; }
+        public DbSet<ProductImage> ProductImages { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //All varchar columns will have 100 as max lenght instead of MAX, on db creation time
+            //All varchar columns will have 100 as max length instead of MAX, on db creation time
             foreach (var property in modelBuilder.Model.GetEntityTypes().SelectMany(
                 e => e.GetProperties().Where(p => p.ClrType == typeof(string))))
                 property.SetMaxLength(100);

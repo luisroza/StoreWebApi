@@ -1,30 +1,29 @@
-﻿using System;
-using ShopifyChallenge.Core.DomainObjects;
+﻿using ShopifyChallenge.Core.DomainObjects;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace ShopifyChallenge.Catalog.Domain
 {
     public class Product : Entity, IAggregateRoot
     {
-        public Guid CategoryId { get; private set; }
         public string Name { get; private set; }
         public string Description { get; private set; }
         public bool Active { get; private set; }
         public decimal Price { get; private set; }
         public DateTime CreateDate { get; private set; }
-        public string Image { get; private set; }
-        public int StockQuantity { get; private set; }
-        public Category Category { get; private set; }
+        public int InventoryQuantity { get; private set; }
+        public IEnumerable<ProductImage> ProductImages { get; set; }
 
         protected Product() { }
-        public Product(string name, string description, bool active, decimal price, Guid categoryId, DateTime createDate, string image)
+        public Product(string name, string description, bool active, decimal price, DateTime createDate, IEnumerable<ProductImage> productImages)
         {
-            CategoryId = categoryId;
             Name = name;
             Description = description;
             Active = active;
             Price = price;
             CreateDate = createDate;
-            Image = image;
+            ProductImages = productImages;
 
             Validate();
         }
@@ -32,12 +31,6 @@ namespace ShopifyChallenge.Catalog.Domain
         public void Activate() => Active = true;
 
         public void Deactivate() => Active = false;
-
-        public void ChangeCategory(Category category)
-        {
-            Category = category;
-            CategoryId = category.Id;
-        }
 
         public void ChangeDescription(string description)
         {
@@ -49,26 +42,25 @@ namespace ShopifyChallenge.Catalog.Domain
         {
             if (quantity < 0) quantity *= -1;
             if (!HasInventory(quantity)) throw new DomainException("There are no items enough in the inventory");
-            StockQuantity -= quantity;
+            InventoryQuantity -= quantity;
         }
 
-        public void ReplenishInventory(int quantity)
+        public void AddInventory(int quantity)
         {
-            StockQuantity += quantity;
+            InventoryQuantity += quantity;
         }
 
         public bool HasInventory(int quantity)
         {
-            return StockQuantity >= quantity;
+            return InventoryQuantity >= quantity;
         }
 
         public void Validate()
         {
             AssertionConcern.AssertArgumentNotEmpty(Name, "Name cannot be empty");
             AssertionConcern.AssertArgumentNotEmpty(Description, "Description cannot be empty");
-            AssertionConcern.AssertArgumentEquals(CategoryId, Guid.Empty, "Product's CategoryId cannot be empty");
             AssertionConcern.AssertArgumentLesserThan(Price, 1, "Product's price cannot be empty");
-            AssertionConcern.AssertArgumentNotEmpty(Image, "Image cannot be empty");
+            if (!ProductImages.Any()) throw new DomainException("A product must have at least one image");
         }
     }
 }

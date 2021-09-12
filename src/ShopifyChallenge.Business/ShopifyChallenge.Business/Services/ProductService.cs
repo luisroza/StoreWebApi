@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using AutoMapper;
-using ShopifyChallenge.Catalog.Application.ViewModel;
-using ShopifyChallenge.Catalog.Data.Repository;
+﻿using AutoMapper;
 using ShopifyChallenge.Catalog.Domain;
 using ShopifyChallenge.Core.DomainObjects;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using ShopifyChallenge.Catalog.Application.ViewModels;
 
 namespace ShopifyChallenge.Catalog.Application.Services
 {
@@ -16,17 +15,12 @@ namespace ShopifyChallenge.Catalog.Application.Services
         private readonly IMapper _mapper;
 
         public ProductService(IProductRepository productRepository,
-                                 IMapper mapper,
-                                 IInventoryService stockService)
+                                IInventoryService inventoryService,
+                                IMapper mapper)
         {
             _productRepository = productRepository;
+            _inventoryService = inventoryService;
             _mapper = mapper;
-            _inventoryService = stockService;
-        }
-
-        public async Task<IEnumerable<ProductViewModel>> GetByCategory(int code)
-        {
-            return _mapper.Map<IEnumerable<ProductViewModel>>(await _productRepository.GetByCategory(code));
         }
 
         public async Task<ProductViewModel> GetById(Guid id)
@@ -37,11 +31,6 @@ namespace ShopifyChallenge.Catalog.Application.Services
         public async Task<IEnumerable<ProductViewModel>> GetAll()
         {
             return _mapper.Map<IEnumerable<ProductViewModel>>(await _productRepository.GetAll());
-        }
-
-        public async Task<IEnumerable<CategoryViewModel>> GetCategories()
-        {
-            return _mapper.Map<IEnumerable<CategoryViewModel>>(await _productRepository.GetCategories());
         }
 
         public async Task AddProduct(ProductViewModel productViewModel)
@@ -60,7 +49,7 @@ namespace ShopifyChallenge.Catalog.Application.Services
             await _productRepository.UnitOfWork.Commit();
         }
 
-        public async Task<ProductViewModel> DecreaseStock(Guid id, int quantity)
+        public async Task<ProductViewModel> DecreaseInventory(Guid id, int quantity)
         {
             if (!_inventoryService.DecreaseInventory(id, quantity).Result)
             {
@@ -70,9 +59,9 @@ namespace ShopifyChallenge.Catalog.Application.Services
             return _mapper.Map<ProductViewModel>(await _productRepository.GetById(id));
         }
 
-        public async Task<ProductViewModel> ReplenishStock(Guid id, int quantity)
+        public async Task<ProductViewModel> AddInventory(Guid id, int quantity)
         {
-            if (!_inventoryService.ReplenishInventory(id, quantity).Result)
+            if (!_inventoryService.AddInventory(id, quantity).Result)
             {
                 throw new DomainException("Error, stock not replenished");
             }

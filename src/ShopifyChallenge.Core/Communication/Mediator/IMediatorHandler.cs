@@ -1,7 +1,6 @@
-﻿using System.Threading.Tasks;
-using ShopifyChallenge.Core.Communication.Messages.DomainEvents;
+﻿using ShopifyChallenge.Core.Communication.Messages.DomainEvents;
 using ShopifyChallenge.Core.Communication.Messages.Notifications;
-using ShopifyChallenge.Core.Messages;
+using System.Threading.Tasks;
 
 namespace ShopifyChallenge.Core.Communication.Mediator
 {

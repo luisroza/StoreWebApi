@@ -1,4 +1,5 @@
-﻿using ShopifyChallenge.Core.Messages;
+﻿using FluentValidation;
+using ShopifyChallenge.Core.Communication;
 using System;
 
 namespace ShopifyChallenge.Sales.Application.Events
@@ -11,6 +12,22 @@ namespace ShopifyChallenge.Sales.Application.Events
         {
             AggregateId = orderId;
             OrderId = orderId;
+        }
+
+        public override bool IsValid()
+        {
+            ValidationResult = new OrderFinalizedValidation().Validate(this);
+            return ValidationResult.IsValid;
+        }
+    }
+
+    public class OrderFinalizedValidation : AbstractValidator<OrderFinalizedEvent>
+    {
+        public OrderFinalizedValidation()
+        {
+            RuleFor(c => c.OrderId)
+                .NotEqual(Guid.Empty)
+                .WithMessage("Order Id is invalid");
         }
     }
 }

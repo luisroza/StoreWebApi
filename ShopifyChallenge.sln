@@ -35,6 +35,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopifyChallenge.Payment.Da
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopifyChallenge.Payment.Domain", "src\ShopifyChallenge.Payment.Domain\ShopifyChallenge.Payment.Domain.csproj", "{CE4D5529-DEE4-487D-B118-93BE9BC19E2B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopifyChallenge.WebApp", "src\ShopifyChallenge.WebApp\ShopifyChallenge.WebApp.csproj", "{5A86C82F-E780-477B-B352-A5D52C3F7496}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,10 @@ Global
 		{CE4D5529-DEE4-487D-B118-93BE9BC19E2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE4D5529-DEE4-487D-B118-93BE9BC19E2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE4D5529-DEE4-487D-B118-93BE9BC19E2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A86C82F-E780-477B-B352-A5D52C3F7496}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A86C82F-E780-477B-B352-A5D52C3F7496}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A86C82F-E780-477B-B352-A5D52C3F7496}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A86C82F-E780-477B-B352-A5D52C3F7496}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -100,6 +106,7 @@ Global
 		{3ECF4436-8DBC-441D-94BE-EAEB331FCD38} = {789A8FC2-EA4B-4197-A08E-FFC0349ED23D}
 		{89EFD909-61B7-410B-AFCE-C8CF1A677C56} = {789A8FC2-EA4B-4197-A08E-FFC0349ED23D}
 		{CE4D5529-DEE4-487D-B118-93BE9BC19E2B} = {789A8FC2-EA4B-4197-A08E-FFC0349ED23D}
+		{5A86C82F-E780-477B-B352-A5D52C3F7496} = {A2519241-6716-4FA5-8E61-38376DBEDB65}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {83207049-7434-4508-AD1F-F142BAFBAE50}

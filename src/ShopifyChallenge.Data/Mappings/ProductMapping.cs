@@ -18,11 +18,12 @@ namespace ShopifyChallenge.Catalog.Data.Mappings
                 .IsRequired()
                 .HasColumnType("varchar(1000)");
 
-            builder.Property(p => p.Image)
-                .IsRequired()
-                .HasColumnType("varchar(100)");
+            // 1 : N => Products : Images
+            builder.HasMany(c => c.ProductImages)
+                .WithOne(p => p.Product)
+                .HasForeignKey(p => p.ProductId);
 
-            builder.ToTable("Products");
+            builder.ToTable("Product");
         }
     }
 }

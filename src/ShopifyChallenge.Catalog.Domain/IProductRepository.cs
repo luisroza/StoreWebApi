@@ -1,7 +1,7 @@
-﻿using System;
+﻿using ShopifyChallenge.Core.Data;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using ShopifyChallenge.Core.Data;
 
 namespace ShopifyChallenge.Catalog.Domain
 {
@@ -9,13 +9,8 @@ namespace ShopifyChallenge.Catalog.Domain
     {
         Task<IEnumerable<Product>> GetAll();
         Task<Product> GetById(Guid id);
-        Task<IEnumerable<Product>> GetByCategory(int code);
-        Task<IEnumerable<Category>> GetCategories();
 
         void Add(Product product);
         void Update(Product product);
-
-        void Add(Category category);
-        void Update(Category category);
     }
 }

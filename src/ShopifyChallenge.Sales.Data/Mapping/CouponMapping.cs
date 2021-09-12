@@ -18,9 +18,9 @@ namespace ShopifyChallenge.Sales.Data.Mapping
             // 1 : N => Voucher : Orders
             builder.HasMany(c => c.Orders)
                 .WithOne(c => c.Coupon)
-                .HasForeignKey(c => c.Coupon);
+                .HasForeignKey(c => c.CouponId);
 
-            builder.ToTable("Vouchers");
+            builder.ToTable("Coupon");
         }
     }
 }

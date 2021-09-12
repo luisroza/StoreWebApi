@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using ShopifyChallenge.Core.Communication;
 using ShopifyChallenge.Core.Communication.Mediator;
 using ShopifyChallenge.Core.Data;
-using ShopifyChallenge.Core.Messages;
 using ShopifyChallenge.Payment.Domain;
 using System;
 using System.Linq;

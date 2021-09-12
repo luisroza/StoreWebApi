@@ -1,9 +1,9 @@
 ﻿using ShopifyChallenge.Core.Communication.Mediator;
+using ShopifyChallenge.Core.Communication.Messages.IntegrationEvents;
 using ShopifyChallenge.Core.Communication.Messages.Notifications;
 using ShopifyChallenge.Core.DomainObjects.DTO;
 using ShopifyChallenge.Payment.Domain;
 using System.Threading.Tasks;
-using ShopifyChallenge.Core.Communication.Messages.IntegrationEvents;
 
 namespace ShopifyChallenge.Payment.Application.Services
 {

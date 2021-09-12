@@ -1,10 +1,9 @@
-﻿using MediatR;
-using System.Threading.Tasks;
-using ShopifyChallenge.Core.Communication.Mediator;
+﻿using System.Threading.Tasks;
+using MediatR;
 using ShopifyChallenge.Core.Communication.Messages.DomainEvents;
 using ShopifyChallenge.Core.Communication.Messages.Notifications;
 
-namespace ShopifyChallenge.Core.Messages.Mediator
+namespace ShopifyChallenge.Core.Communication.Mediator
 {
     public class MediatorHandler : IMediatorHandler
     {

@@ -3,7 +3,7 @@ using System;
 
 namespace ShopifyChallenge.Core.Communication.Messages.IntegrationEvents
 {
-    public class StartOrderEvent : IntegrationEvent
+    public class OrderStartedEvent : IntegrationEvent
     {
         public Guid OrderId { get; private set; }
         public Guid CustomerId { get; private set; }
@@ -14,7 +14,7 @@ namespace ShopifyChallenge.Core.Communication.Messages.IntegrationEvents
         public string CardVerificationCode { get; private set; }
         public OrderItemList ItemList { get; private set; }
 
-        public StartOrderEvent(Guid customerId, Guid orderId, OrderItemList itemList, decimal total, string cardName, string cardNumber, string cardExpirationDate, string cardVerificationCode)
+        public OrderStartedEvent(Guid customerId, Guid orderId, OrderItemList itemList, decimal total, string cardName, string cardNumber, string cardExpirationDate, string cardVerificationCode)
         {
             AggregateId = orderId;
             CustomerId = customerId;

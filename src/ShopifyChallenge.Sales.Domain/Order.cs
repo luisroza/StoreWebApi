@@ -11,7 +11,7 @@ namespace ShopifyChallenge.Sales.Domain
         public int Code { get; private set; }
         public Guid CustomerId { get; private set; }
         public Guid? CouponId { get; private set; }
-        public bool VoucherUsed { get; private set; }
+        public bool CouponUsed { get; private set; }
         public decimal Discount { get; private set; }
         public decimal TotalPrice { get; private set; }
         public DateTime CreateDate { get; private set; }
@@ -26,10 +26,10 @@ namespace ShopifyChallenge.Sales.Domain
         //EF relation
         public virtual Coupon Coupon { get; private set; }
 
-        public Order(Guid customerId, bool voucherUsed, decimal discount, decimal totalPrice)
+        public Order(Guid customerId, bool couponUsed, decimal discount, decimal totalPrice)
         {
             CustomerId = customerId;
-            VoucherUsed = voucherUsed;
+            CouponUsed = couponUsed;
             Discount = discount;
             TotalPrice = totalPrice;
             _orderLines = new List<OrderLine>();
@@ -45,7 +45,7 @@ namespace ShopifyChallenge.Sales.Domain
 
         public void CalculateTotalPriceDiscount()
         {
-            if (!VoucherUsed) return;
+            if (!CouponUsed) return;
 
             decimal discount = 0;
             var price = TotalPrice;
@@ -83,7 +83,7 @@ namespace ShopifyChallenge.Sales.Domain
             if (!validationResult.IsValid) return validationResult;
 
             Coupon = voucher;
-            VoucherUsed = true;
+            CouponUsed = true;
             CalculateOrderPrice();
 
             return validationResult;

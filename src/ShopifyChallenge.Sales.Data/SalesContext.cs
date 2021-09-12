@@ -1,12 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using ShopifyChallenge.Core.Communication;
+using ShopifyChallenge.Core.Communication.Mediator;
 using ShopifyChallenge.Core.Data;
-using ShopifyChallenge.Core.Messages;
-using ShopifyChallenge.Core.Messages.Mediator;
 using ShopifyChallenge.Sales.Domain;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
-using ShopifyChallenge.Core.Communication.Mediator;
 
 namespace ShopifyChallenge.Sales.Data
 {

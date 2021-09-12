@@ -1,11 +1,10 @@
 ﻿using ShopifyChallenge.Catalog.Application.Events;
-using ShopifyChallenge.Catalog.Data.Repository;
+using ShopifyChallenge.Catalog.Domain;
 using ShopifyChallenge.Core.Communication.Mediator;
 using ShopifyChallenge.Core.Communication.Messages.Notifications;
 using ShopifyChallenge.Core.DomainObjects.DTO;
 using System;
 using System.Threading.Tasks;
-using ShopifyChallenge.Catalog.Domain;
 
 namespace ShopifyChallenge.Catalog.Application.Services
 {
@@ -44,39 +43,32 @@ namespace ShopifyChallenge.Catalog.Application.Services
 
             if (!product.HasInventory(quantity))
             {
-                await _mediatorHandler.PublishNotification(new DomainNotification("Inventory",
-                    $"Order - {product.Name} has no stock"));
+                await _mediatorHandler.PublishNotification(new DomainNotification("Inventory", $"Order - {product.Name} has no stock"));
                 return false;
             }
 
             product.DecreaseInventory(quantity);
 
-            //Business Rule -> place it into a config file
-            if (product.StockQuantity < 10)
-            {
-                await _mediatorHandler.PublishDomainEvent(new InventoryEvent(product.Id, product.StockQuantity));
-            }
-
             _productRepository.Update(product);
             return true;
         }
 
-        public async Task<bool> ReplenishInventory(Guid productId, int quantity)
+        public async Task<bool> AddInventory(Guid productId, int quantity)
         {
             var product = await _productRepository.GetById(productId);
 
             if (product == null) return false;
-            product.ReplenishInventory(quantity);
+            product.AddInventory(quantity);
 
             _productRepository.Update(product);
             return await _productRepository.UnitOfWork.Commit();
         }
 
-        public async Task<bool> ReplenishInventoryOrderProductsList(OrderItemList list)
+        public async Task<bool> AddInventoryOrderProductsList(OrderItemList list)
         {
             foreach (var item in list.Lines)
             {
-                await ReplenishInventory(item.Id, item.Quantity);
+                await AddInventory(item.Id, item.Quantity);
             }
 
             return await _productRepository.UnitOfWork.Commit();
@@ -87,7 +79,7 @@ namespace ShopifyChallenge.Catalog.Application.Services
             var product = await _productRepository.GetById(productId);
 
             if (product == null) return false;
-            product.ReplenishInventory(quantity);
+            product.AddInventory(quantity);
 
             _productRepository.Update(product);
             return true;

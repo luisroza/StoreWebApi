@@ -1,4 +1,4 @@
-﻿using ShopifyChallenge.Core.Messages;
+﻿using ShopifyChallenge.Core.Communication;
 using System;
 using System.Collections.Generic;
 

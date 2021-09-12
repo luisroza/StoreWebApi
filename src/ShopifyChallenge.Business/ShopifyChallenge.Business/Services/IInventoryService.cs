@@ -8,7 +8,7 @@ namespace ShopifyChallenge.Catalog.Application.Services
     {
         Task<bool> DecreaseInventory(Guid productId, int quantity);
         Task<bool> DecreaseInventoryProductList(OrderItemList list);
-        Task<bool> ReplenishInventory(Guid productId, int quantity);
-        Task<bool> ReplenishInventoryOrderProductsList(OrderItemList list);
+        Task<bool> AddInventory(Guid productId, int quantity);
+        Task<bool> AddInventoryOrderProductsList(OrderItemList list);
     }
 }
