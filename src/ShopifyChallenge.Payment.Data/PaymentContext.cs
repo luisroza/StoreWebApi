@@ -6,6 +6,7 @@ using ShopifyChallenge.Payment.Domain;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
+using ShopifyChallenge.Core.Communication.Messages;
 
 namespace ShopifyChallenge.Payment.Data
 {

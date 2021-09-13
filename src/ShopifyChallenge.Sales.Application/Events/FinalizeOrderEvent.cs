@@ -1,6 +1,7 @@
 ﻿using FluentValidation;
 using ShopifyChallenge.Core.Communication;
 using System;
+using ShopifyChallenge.Core.Communication.Messages;
 
 namespace ShopifyChallenge.Sales.Application.Events
 {

@@ -7,15 +7,17 @@ namespace ShopifyChallenge.Catalog.Domain
     {
         public Guid ProductId { get; set; }
         public DateTime CreateDate { get; private set; }
+        public string Name { get; set; }
 
         public Product Product { get; set; }
 
         // EF Relation
         protected ProductImage() { }
 
-        public ProductImage(Guid productId, DateTime createDate)
+        public ProductImage(Guid productId, string imageName, DateTime createDate)
         {
             ProductId = productId;
+            Name = imageName;
             CreateDate = createDate;
 
             Validate();
@@ -29,6 +31,7 @@ namespace ShopifyChallenge.Catalog.Domain
         public void Validate()
         {
             AssertionConcern.AssertArgumentEquals(ProductId, Guid.Empty, "ProductId cannot be empty");
+            AssertionConcern.AssertArgumentNotEmpty(Name,  "Images' name cannot be empty");
         }
     }
 }

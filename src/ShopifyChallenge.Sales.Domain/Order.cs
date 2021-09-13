@@ -1,8 +1,8 @@
-﻿using ShopifyChallenge.Core.DomainObjects;
+﻿using FluentValidation.Results;
+using ShopifyChallenge.Core.DomainObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using FluentValidation.Results;
 
 namespace ShopifyChallenge.Sales.Domain
 {
@@ -77,12 +77,12 @@ namespace ShopifyChallenge.Sales.Domain
             CalculateTotalPriceDiscount();
         }
 
-        public ValidationResult ApplyVoucher(Coupon voucher)
+        public ValidationResult ApplyCoupon(Coupon coupon)
         {
-            var validationResult = voucher.ValidateVoucher();
+            var validationResult = coupon.ValidateVoucher();
             if (!validationResult.IsValid) return validationResult;
 
-            Coupon = voucher;
+            Coupon = coupon;
             CouponUsed = true;
             CalculateOrderPrice();
 

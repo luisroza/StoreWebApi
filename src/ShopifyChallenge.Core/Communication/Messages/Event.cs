@@ -1,9 +1,8 @@
 ﻿using System;
 using FluentValidation.Results;
 using MediatR;
-using ShopifyChallenge.Core.Communication.Messages;
 
-namespace ShopifyChallenge.Core.Communication
+namespace ShopifyChallenge.Core.Communication.Messages
 {
     public abstract class Event : Message, INotification
     {

@@ -11,10 +11,10 @@ namespace ShopifyChallenge.Catalog.Application.AutoMapper
         {
             CreateMap<ProductViewModel, Product>()
                 .ConstructUsing(p => new Product(p.Name, p.Description, p.Active,
-                        p.Price, p.CreateDate, new List<ProductImage>()));
+                        p.Price, p.CreateDate));
 
             CreateMap<ProductImageViewModel, ProductImage>()
-                .ConstructUsing(c => new ProductImage(c.ProductId, c.CreateDate));
+                .ConstructUsing(c => new ProductImage(c.ProductId, c.Name, c.CreateDate));
         }
     }
 }

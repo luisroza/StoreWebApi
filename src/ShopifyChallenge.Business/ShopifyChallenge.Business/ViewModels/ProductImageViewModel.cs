@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace ShopifyChallenge.Catalog.Application.ViewModels
@@ -15,8 +14,11 @@ namespace ShopifyChallenge.Catalog.Application.ViewModels
         [Required(ErrorMessage = "{0} is required")]
         public DateTime CreateDate { get; set; }
 
-        public ProductViewModel Product { get; set; }
+        [Required(ErrorMessage = "{0} is required")]
+        public string Name { get; set; }
 
-        public IEnumerable<ProductViewModel> ProductList { get; set; }
+        public string FileBase { get; set; }
+
+        public ProductViewModel Product { get; set; }
     }
 }

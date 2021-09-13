@@ -17,25 +17,25 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApps", "WebApps", "{A251
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{9F2C5CD5-6EF0-4351-A579-D3BDE6254218}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopifyChallenge.Core", "src\ShopifyChallenge.Core\ShopifyChallenge.Core.csproj", "{B5B8FC26-DCCA-4EAC-B301-B188798287C5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopifyChallenge.Core", "src\ShopifyChallenge.Core\ShopifyChallenge.Core.csproj", "{B5B8FC26-DCCA-4EAC-B301-B188798287C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopifyChallenge.Catalog.Domain", "src\ShopifyChallenge.Catalog.Domain\ShopifyChallenge.Catalog.Domain.csproj", "{2660DA0C-A7F5-476E-BEEE-0AD27D1B5904}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopifyChallenge.Catalog.Domain", "src\ShopifyChallenge.Catalog.Domain\ShopifyChallenge.Catalog.Domain.csproj", "{2660DA0C-A7F5-476E-BEEE-0AD27D1B5904}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopifyChallenge.Sales.Application", "src\ShopifyChallenge.Sales.Application\ShopifyChallenge.Sales.Application.csproj", "{7AA10AD5-C996-4E5D-97D0-615DBD4636A4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopifyChallenge.Sales.Application", "src\ShopifyChallenge.Sales.Application\ShopifyChallenge.Sales.Application.csproj", "{7AA10AD5-C996-4E5D-97D0-615DBD4636A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopifyChallenge.Sales.Data", "src\ShopifyChallenge.Sales.Data\ShopifyChallenge.Sales.Data.csproj", "{34944177-3517-41DB-990D-C8BC9A0D2F26}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopifyChallenge.Sales.Data", "src\ShopifyChallenge.Sales.Data\ShopifyChallenge.Sales.Data.csproj", "{34944177-3517-41DB-990D-C8BC9A0D2F26}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopifyChallenge.Sales.Domain", "src\ShopifyChallenge.Sales.Domain\ShopifyChallenge.Sales.Domain.csproj", "{67ACE0CD-FB87-4AA2-97D2-C4880E126FEA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopifyChallenge.Sales.Domain", "src\ShopifyChallenge.Sales.Domain\ShopifyChallenge.Sales.Domain.csproj", "{67ACE0CD-FB87-4AA2-97D2-C4880E126FEA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Payment", "Payment", "{789A8FC2-EA4B-4197-A08E-FFC0349ED23D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopifyChallenge.Payment.Application", "src\ShopifyChallenge.Payment.Application\ShopifyChallenge.Payment.Application.csproj", "{3ECF4436-8DBC-441D-94BE-EAEB331FCD38}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopifyChallenge.Payment.Application", "src\ShopifyChallenge.Payment.Application\ShopifyChallenge.Payment.Application.csproj", "{3ECF4436-8DBC-441D-94BE-EAEB331FCD38}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopifyChallenge.Payment.Data", "src\ShopifyChallenge.Payment.Data\ShopifyChallenge.Payment.Data.csproj", "{89EFD909-61B7-410B-AFCE-C8CF1A677C56}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopifyChallenge.Payment.Data", "src\ShopifyChallenge.Payment.Data\ShopifyChallenge.Payment.Data.csproj", "{89EFD909-61B7-410B-AFCE-C8CF1A677C56}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopifyChallenge.Payment.Domain", "src\ShopifyChallenge.Payment.Domain\ShopifyChallenge.Payment.Domain.csproj", "{CE4D5529-DEE4-487D-B118-93BE9BC19E2B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopifyChallenge.Payment.Domain", "src\ShopifyChallenge.Payment.Domain\ShopifyChallenge.Payment.Domain.csproj", "{CE4D5529-DEE4-487D-B118-93BE9BC19E2B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopifyChallenge.WebApp", "src\ShopifyChallenge.WebApp\ShopifyChallenge.WebApp.csproj", "{5A86C82F-E780-477B-B352-A5D52C3F7496}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopifyChallenge.WebAPI", "src\ShopifyChallenge.WebAPI\ShopifyChallenge.WebAPI.csproj", "{63925A7F-4B3C-46AA-B4AF-F1BCF44C58CA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -83,10 +83,10 @@ Global
 		{CE4D5529-DEE4-487D-B118-93BE9BC19E2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE4D5529-DEE4-487D-B118-93BE9BC19E2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE4D5529-DEE4-487D-B118-93BE9BC19E2B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5A86C82F-E780-477B-B352-A5D52C3F7496}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5A86C82F-E780-477B-B352-A5D52C3F7496}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5A86C82F-E780-477B-B352-A5D52C3F7496}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5A86C82F-E780-477B-B352-A5D52C3F7496}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63925A7F-4B3C-46AA-B4AF-F1BCF44C58CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63925A7F-4B3C-46AA-B4AF-F1BCF44C58CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63925A7F-4B3C-46AA-B4AF-F1BCF44C58CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63925A7F-4B3C-46AA-B4AF-F1BCF44C58CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -106,7 +106,7 @@ Global
 		{3ECF4436-8DBC-441D-94BE-EAEB331FCD38} = {789A8FC2-EA4B-4197-A08E-FFC0349ED23D}
 		{89EFD909-61B7-410B-AFCE-C8CF1A677C56} = {789A8FC2-EA4B-4197-A08E-FFC0349ED23D}
 		{CE4D5529-DEE4-487D-B118-93BE9BC19E2B} = {789A8FC2-EA4B-4197-A08E-FFC0349ED23D}
-		{5A86C82F-E780-477B-B352-A5D52C3F7496} = {A2519241-6716-4FA5-8E61-38376DBEDB65}
+		{63925A7F-4B3C-46AA-B4AF-F1BCF44C58CA} = {A2519241-6716-4FA5-8E61-38376DBEDB65}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {83207049-7434-4508-AD1F-F142BAFBAE50}

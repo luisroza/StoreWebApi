@@ -40,6 +40,22 @@ namespace ShopifyChallenge.Catalog.Data.Repository
             _context.Products.Update(product);
         }
 
+        public async Task<ProductImage> GetImageById(Guid id)
+        {
+            return await _context.ProductImages.AsNoTracking().FirstOrDefaultAsync(p => p.Id == id);
+        }
+
+        public void AddImage(ProductImage productImage)
+        {
+            _context.ProductImages.Add(productImage);
+        }
+
+        public async void RemoveImage(Guid id)
+        {
+            var productImage = await _context.ProductImages.AsNoTracking().FirstOrDefaultAsync(p => p.Id == id);
+            _context.ProductImages.Remove(productImage);
+        }
+
         public void Dispose()
         {
             _context?.Dispose();

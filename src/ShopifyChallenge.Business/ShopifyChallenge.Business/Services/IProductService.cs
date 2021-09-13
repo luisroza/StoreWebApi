@@ -1,7 +1,7 @@
-﻿using System;
+﻿using ShopifyChallenge.Catalog.Application.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using ShopifyChallenge.Catalog.Application.ViewModels;
 
 namespace ShopifyChallenge.Catalog.Application.Services
 {
@@ -10,10 +10,14 @@ namespace ShopifyChallenge.Catalog.Application.Services
         Task<ProductViewModel> GetById(Guid id);
         Task<IEnumerable<ProductViewModel>> GetAll();
 
-        Task AddProduct(ProductViewModel productViewModel);
-        Task UpdateProduct(ProductViewModel productViewModel);
+        Task Add(ProductViewModel productViewModel);
+        Task Update(ProductViewModel productViewModel);
 
         Task<ProductViewModel> DecreaseInventory(Guid id, int quantity);
         Task<ProductViewModel> AddInventory(Guid id, int quantity);
+
+        Task<ProductViewModel> GetImageById(Guid id);
+        Task AddImage(ProductImageViewModel productImageView);
+        Task RemoveImage(Guid Id);
     }
 }

@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>aspnet-ShopifyChallenge.WebAPI-2F039B19-C37A-48A0-92E7-A6E4CFD70EDD</UserSecretsId>
+    <WebProject_DirectoryAccessLevelKey>0</WebProject_DirectoryAccessLevelKey>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.AzureAD.UI" Version="3.1.18" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.18" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.18" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.18" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.18" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="3.1.18" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.18" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ShopifyChallenge.Business\ShopifyChallenge.Business\ShopifyChallenge.Catalog.Application.csproj" />
+    <ProjectReference Include="..\ShopifyChallenge.Catalog.Domain\ShopifyChallenge.Catalog.Domain.csproj" />
+    <ProjectReference Include="..\ShopifyChallenge.Core\ShopifyChallenge.Core.csproj" />
+    <ProjectReference Include="..\ShopifyChallenge.Data\ShopifyChallenge.Catalog.Data.csproj" />
+    <ProjectReference Include="..\ShopifyChallenge.Payment.Application\ShopifyChallenge.Payment.Application.csproj" />
+    <ProjectReference Include="..\ShopifyChallenge.Payment.Data\ShopifyChallenge.Payment.Data.csproj" />
+    <ProjectReference Include="..\ShopifyChallenge.Payment.Domain\ShopifyChallenge.Payment.Domain.csproj" />
+    <ProjectReference Include="..\ShopifyChallenge.Sales.Application\ShopifyChallenge.Sales.Application.csproj" />
+    <ProjectReference Include="..\ShopifyChallenge.Sales.Data\ShopifyChallenge.Sales.Data.csproj" />
+    <ProjectReference Include="..\ShopifyChallenge.Sales.Domain\ShopifyChallenge.Sales.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

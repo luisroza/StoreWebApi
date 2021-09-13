@@ -1,5 +1,4 @@
-﻿using FluentValidation;
-using ShopifyChallenge.Core.Communication;
+﻿using ShopifyChallenge.Core.Communication.Messages;
 using System;
 
 namespace ShopifyChallenge.Sales.Application.Events
@@ -15,30 +14,6 @@ namespace ShopifyChallenge.Sales.Application.Events
             CustomerId = customerId;
             ProductId = productId;
             Quantity = quantity;
-        }
-
-        public override bool IsValid()
-        {
-            ValidationResult = new UpdateOrderLineValidation().Validate(this);
-            return ValidationResult.IsValid;
-        }
-    }
-
-    public class UpdateOrderLineValidation : AbstractValidator<UpdateOrderLineEvent>
-    {
-        public UpdateOrderLineValidation()
-        {
-            RuleFor(c => c.CustomerId)
-                .NotEqual(Guid.Empty)
-                .WithMessage("Customers' Id is invalid");
-
-            RuleFor(c => c.ProductId)
-                .NotEqual(Guid.Empty)
-                .WithMessage("Products' Id is invalid");
-
-            RuleFor(c => c.Quantity)
-                .GreaterThan(0)
-                .WithMessage("Minimum quantity for an item is 1");
         }
     }
 }

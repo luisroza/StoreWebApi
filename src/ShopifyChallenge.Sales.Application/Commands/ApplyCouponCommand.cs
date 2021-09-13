@@ -1,15 +1,15 @@
-﻿using FluentValidation;
-using ShopifyChallenge.Core.Communication;
-using System;
+﻿using System;
+using FluentValidation;
+using ShopifyChallenge.Core.Communication.Messages;
 
-namespace ShopifyChallenge.Sales.Application.Events
+namespace ShopifyChallenge.Sales.Application.Commands
 {
-    public class ApplyCouponEvent : Event
+    public class ApplyCouponCommand : Command
     {
         public Guid CustomerId { get; private set; }
         public string CouponCode { get; private set; }
 
-        public ApplyCouponEvent(Guid customerId, string couponCode)
+        public ApplyCouponCommand(Guid customerId, string couponCode)
         {
             CustomerId = customerId;
             CouponCode = couponCode;
@@ -22,7 +22,7 @@ namespace ShopifyChallenge.Sales.Application.Events
         }
     }
 
-    public class ApplyCouponValidation : AbstractValidator<ApplyCouponEvent>
+    public class ApplyCouponValidation : AbstractValidator<ApplyCouponCommand>
     {
         public ApplyCouponValidation()
         {

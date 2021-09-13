@@ -33,7 +33,7 @@ namespace ShopifyChallenge.Catalog.Application.Services
             return _mapper.Map<IEnumerable<ProductViewModel>>(await _productRepository.GetAll());
         }
 
-        public async Task AddProduct(ProductViewModel productViewModel)
+        public async Task Add(ProductViewModel productViewModel)
         {
             var product = _mapper.Map<Product>(productViewModel);
             _productRepository.Add(product);
@@ -41,7 +41,7 @@ namespace ShopifyChallenge.Catalog.Application.Services
             await _productRepository.UnitOfWork.Commit();
         }
 
-        public async Task UpdateProduct(ProductViewModel productViewModel)
+        public async Task Update(ProductViewModel productViewModel)
         {
             var product = _mapper.Map<Product>(productViewModel);
             _productRepository.Update(product);
@@ -67,6 +67,26 @@ namespace ShopifyChallenge.Catalog.Application.Services
             }
 
             return _mapper.Map<ProductViewModel>(await _productRepository.GetById(id));
+        }
+
+        public async Task<ProductViewModel> GetImageById(Guid id)
+        {
+            return _mapper.Map<ProductViewModel>(await _productRepository.GetImageById(id));
+        }
+
+        public async Task AddImage(ProductImageViewModel productImageViewModel)
+        {
+            var image = _mapper.Map<ProductImage>(productImageViewModel);
+            _productRepository.AddImage(image);
+
+            await _productRepository.UnitOfWork.Commit();
+        }
+
+        public async Task RemoveImage(Guid id)
+        {
+            _productRepository.RemoveImage(id);
+
+            await _productRepository.UnitOfWork.Commit();
         }
 
         public void Dispose()

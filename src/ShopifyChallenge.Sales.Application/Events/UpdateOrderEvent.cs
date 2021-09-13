@@ -1,5 +1,4 @@
-﻿using FluentValidation;
-using ShopifyChallenge.Core.Communication;
+﻿using ShopifyChallenge.Core.Communication.Messages;
 using System;
 
 namespace ShopifyChallenge.Sales.Application.Events
@@ -16,30 +15,6 @@ namespace ShopifyChallenge.Sales.Application.Events
             CustomerId = customerId;
             OrderId = orderId;
             TotalPrice = totalPrice;
-        }
-
-        public override bool IsValid()
-        {
-            ValidationResult = new UpdateOrderValidation().Validate(this);
-            return ValidationResult.IsValid;
-        }
-    }
-
-    public class UpdateOrderValidation : AbstractValidator<UpdateOrderEvent>
-    {
-        public UpdateOrderValidation()
-        {
-            RuleFor(c => c.CustomerId)
-                .NotEqual(Guid.Empty)
-                .WithMessage("Customers' Id is invalid");
-
-            RuleFor(c => c.OrderId)
-                .NotEqual(Guid.Empty)
-                .WithMessage("Orders' Id is invalid");
-
-            RuleFor(c => c.TotalPrice)
-                .GreaterThan(0)
-                .WithMessage("Total order must be greater than zero");
         }
     }
 }

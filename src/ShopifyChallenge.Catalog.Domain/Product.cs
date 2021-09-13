@@ -13,17 +13,17 @@ namespace ShopifyChallenge.Catalog.Domain
         public decimal Price { get; private set; }
         public DateTime CreateDate { get; private set; }
         public int InventoryQuantity { get; private set; }
-        public IEnumerable<ProductImage> ProductImages { get; set; }
+        public List<ProductImage> ProductImages { get; set; }
 
         protected Product() { }
-        public Product(string name, string description, bool active, decimal price, DateTime createDate, IEnumerable<ProductImage> productImages)
+        public Product(string name, string description, bool active, decimal price, DateTime createDate)
         {
             Name = name;
             Description = description;
             Active = active;
             Price = price;
             CreateDate = createDate;
-            ProductImages = productImages;
+            ProductImages = new List<ProductImage>();
 
             Validate();
         }
@@ -53,6 +53,16 @@ namespace ShopifyChallenge.Catalog.Domain
         public bool HasInventory(int quantity)
         {
             return InventoryQuantity >= quantity;
+        }
+
+        public void AddImage(ProductImage productImage)
+        {
+            ProductImages?.Add(productImage);
+        }
+
+        public void RemoveImage(ProductImage productImage)
+        {
+            ProductImages?.Remove(productImage);
         }
 
         public void Validate()

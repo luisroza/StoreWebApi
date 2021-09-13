@@ -1,15 +1,15 @@
-﻿using FluentValidation;
-using ShopifyChallenge.Core.Communication;
-using System;
+﻿using System;
+using FluentValidation;
+using ShopifyChallenge.Core.Communication.Messages;
 
-namespace ShopifyChallenge.Sales.Application.Events
+namespace ShopifyChallenge.Sales.Application.Commands
 {
-    public class CancelOrderReplenishInventoryEvent : Event
+    public class CancelOrderReplenishInventoryCommand : Command
     {
         public Guid OrderId { get; private set; }
         public Guid CustomerId { get; private set; }
 
-        public CancelOrderReplenishInventoryEvent(Guid orderId, Guid customerId)
+        public CancelOrderReplenishInventoryCommand(Guid orderId, Guid customerId)
         {
             AggregateId = orderId;
             OrderId = orderId;
@@ -23,7 +23,7 @@ namespace ShopifyChallenge.Sales.Application.Events
         }
     }
 
-    public class CancelOrderReplenishInventoryValidation : AbstractValidator<CancelOrderReplenishInventoryEvent>
+    public class CancelOrderReplenishInventoryValidation : AbstractValidator<CancelOrderReplenishInventoryCommand>
     {
         public CancelOrderReplenishInventoryValidation()
         {

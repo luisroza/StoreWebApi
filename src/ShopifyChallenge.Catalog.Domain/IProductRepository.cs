@@ -12,5 +12,9 @@ namespace ShopifyChallenge.Catalog.Domain
 
         void Add(Product product);
         void Update(Product product);
+
+        Task<ProductImage> GetImageById(Guid id);
+        void AddImage(ProductImage productImage);
+        void RemoveImage(Guid id);
     }
 }

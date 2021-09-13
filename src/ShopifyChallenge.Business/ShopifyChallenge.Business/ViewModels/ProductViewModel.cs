@@ -27,8 +27,7 @@ namespace ShopifyChallenge.Catalog.Application.ViewModels
         [Range(1, int.MaxValue, ErrorMessage = "{1} is the minimum value for {0}")]
         [Required(ErrorMessage = "{0} is required")]
         public int InventoryQuantity { get; set; }
-
-        public ProductImageViewModel ProductImage { get; set; }
-        public IEnumerable<ProductImageViewModel> ProductImages { get; set; }
+        
+        public List<ProductImageViewModel> ProductImages { get; set; }
     }
 }

@@ -1,5 +1,4 @@
-﻿using ShopifyChallenge.Catalog.Application.Events;
-using ShopifyChallenge.Catalog.Domain;
+﻿using ShopifyChallenge.Catalog.Domain;
 using ShopifyChallenge.Core.Communication.Mediator;
 using ShopifyChallenge.Core.Communication.Messages.Notifications;
 using ShopifyChallenge.Core.DomainObjects.DTO;
@@ -74,7 +73,7 @@ namespace ShopifyChallenge.Catalog.Application.Services
             return await _productRepository.UnitOfWork.Commit();
         }
 
-        public async Task<bool> ReplenishInventoryItem(Guid productId, int quantity)
+        public async Task<bool> AddInventoryItem(Guid productId, int quantity)
         {
             var product = await _productRepository.GetById(productId);
 

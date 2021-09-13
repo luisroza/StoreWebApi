@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using ShopifyChallenge.Core.Communication.Mediator;
 using ShopifyChallenge.Core.Communication.Messages.IntegrationEvents;
+using ShopifyChallenge.Sales.Application.Commands;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -42,18 +43,18 @@ namespace ShopifyChallenge.Sales.Application.Events
         public async Task Handle(OrderInventoryRejectedEvent message, CancellationToken cancellationToken)
         {
             //cancel order process - show error to customer
-            await _mediatorHandler.PublishEvent(new CancelOrderEvent(message.OrderId, message.CustomerId));
+            await _mediatorHandler.SendCommand(new CancelOrderCommand(message.OrderId, message.CustomerId));
         }
 
         public async Task Handle(CheckOutEvent message, CancellationToken cancellationToken)
         {
             //Order completed
-            await _mediatorHandler.PublishEvent(new FinalizeOrderEvent(message.CustomerId, message.CustomerId));
+            await _mediatorHandler.SendCommand(new FinalizeOrderCommand(message.CustomerId, message.CustomerId));
         }
 
         public async Task Handle(PaymentRejectedEvent message, CancellationToken cancellationToken)
         {
-            await _mediatorHandler.PublishEvent(new CancelOrderReplenishInventoryEvent(message.OrderId, message.CustomerId));
+            await _mediatorHandler.SendCommand(new CancelOrderReplenishInventoryCommand(message.OrderId, message.CustomerId));
         }
     }
 }

@@ -1,7 +1,8 @@
-﻿using System.Threading.Tasks;
-using MediatR;
+﻿using MediatR;
+using ShopifyChallenge.Core.Communication.Messages;
 using ShopifyChallenge.Core.Communication.Messages.DomainEvents;
 using ShopifyChallenge.Core.Communication.Messages.Notifications;
+using System.Threading.Tasks;
 
 namespace ShopifyChallenge.Core.Communication.Mediator
 {
@@ -17,6 +18,12 @@ namespace ShopifyChallenge.Core.Communication.Mediator
         public async Task PublishEvent<T>(T events) where T : Event
         {
             await _mediator.Publish(events);
+        }
+
+        public async Task<bool> SendCommand<T>(T command) where T : Command
+        {
+            //Send = request
+            return await _mediator.Send(command);
         }
 
         public async Task PublishNotification<T>(T notification) where T : DomainNotification
