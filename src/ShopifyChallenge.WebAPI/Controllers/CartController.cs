@@ -33,9 +33,10 @@ namespace ShopifyChallenge.WebAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetCart()
+        [Route("order-summary")]
+        public async Task<IActionResult> OrderSummary()
         {
-            return CustomResponse(await _orderService.GetCustomerCart(UserId));
+            return CustomResponse(await GetCustomerCart());
         }
 
         [HttpPost]
@@ -53,12 +54,7 @@ namespace ShopifyChallenge.WebAPI.Controllers
             var command = new AddOrderLineCommand(UserId, product.Id, product.Name, quantity, product.Price);
             await _mediatorHandler.SendCommand(command);
 
-            if (IsValidOperation())
-            {
-                return BadRequest();
-            }
-            
-            return CustomResponse();
+            return IsValidOperation() ? BadRequest() : CustomResponse(await GetCustomerCart());
         }
 
         [HttpPost]
@@ -71,12 +67,7 @@ namespace ShopifyChallenge.WebAPI.Controllers
             var command = new RemoveOrderLineCommand(UserId, id);
             await _mediatorHandler.SendCommand(command);
 
-            if (IsValidOperation())
-            {
-                return BadRequest();
-            }
-
-            return CustomResponse(await _orderService.GetCustomerCart(UserId));
+            return IsValidOperation() ? BadRequest() : CustomResponse(await GetCustomerCart());
         }
 
         [HttpPost]
@@ -89,12 +80,7 @@ namespace ShopifyChallenge.WebAPI.Controllers
             var command = new UpdateOrderLineCommand(UserId, id, quantity);
             await _mediatorHandler.SendCommand(command);
 
-            if (IsValidOperation())
-            {
-                return BadRequest();
-            }
-
-            return CustomResponse(await _orderService.GetCustomerCart(UserId));
+            return IsValidOperation() ? BadRequest() : CustomResponse(await GetCustomerCart());
         }
 
         [HttpPost]
@@ -104,37 +90,25 @@ namespace ShopifyChallenge.WebAPI.Controllers
             var command = new ApplyCouponCommand(UserId, voucherCode);
             await _mediatorHandler.SendCommand(command);
 
-            if (IsValidOperation())
-            {
-                return BadRequest();
-            }
-
-            return CustomResponse(await _orderService.GetCustomerCart(UserId));
-        }
-
-        [Route("order-summary")]
-        public async Task<IActionResult> OrderSummary()
-        {
-            return CustomResponse(await _orderService.GetCustomerCart(UserId));
+            return IsValidOperation() ? BadRequest() : CustomResponse(await GetCustomerCart());
         }
 
         [HttpGet]
-        [Route("start-order")]
+        [Route("check-out-order")]
         public async Task<IActionResult> StartOrder(CartViewModel cartViewModel)
         {
             var cart = await _orderService.GetCustomerCart(UserId);
 
             var command = new StartOrderCommand(cart.OrderId, UserId, cart.TotalPrice, cartViewModel.Payment.CardName,
                 cartViewModel.Payment.CardNumber, cartViewModel.Payment.CardExpirationDate, cartViewModel.Payment.CardVerificationCode);
-
             await _mediatorHandler.SendCommand(command);
 
-            if (IsValidOperation())
-            {
-                return CustomResponse();
-            }
+            return IsValidOperation() ? CustomResponse(cartViewModel) : CustomResponse(await GetCustomerCart());
+        }
 
-            return CustomResponse(await _orderService.GetCustomerCart(UserId));
+        private async Task<CartViewModel> GetCustomerCart()
+        {
+            return await _orderService.GetCustomerCart(UserId);
         }
     }
 }

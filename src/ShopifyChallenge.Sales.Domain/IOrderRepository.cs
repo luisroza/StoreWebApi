@@ -19,6 +19,6 @@ namespace ShopifyChallenge.Sales.Domain
         void UpdateOrderLine(OrderLine orderLine);
         void RemoveOrderLine(OrderLine orderLine);
 
-        Task<Coupon> GetVoucherByCode(string code);
+        Task<Coupon> GetCouponByCode(string code);
     }
 }

@@ -80,7 +80,7 @@ namespace ShopifyChallenge.Sales.Application.Commands
                 return false;
             }
 
-            var coupon = await _orderRepository.GetVoucherByCode(message.CouponCode);
+            var coupon = await _orderRepository.GetCouponByCode(message.CouponCode);
             if (coupon == null)
             {
                 await _mediatorHandler.PublishNotification(new DomainNotification("order", "Coupon not found"));
@@ -176,7 +176,7 @@ namespace ShopifyChallenge.Sales.Application.Commands
             order.OrderLines.ForEach(i => itemList.Add(new Item { Id = i.ProductId, Quantity = i.Quantity }));
             var orderItemList = new OrderItemList { OrderId = order.Id, Lines = itemList };
 
-            order.AddEvent(new Events.StartOrderEvent(order.Id, order.CustomerId, orderItemList, order.TotalPrice, message.CardName, message.CardNumber, message.CardExpirationDate, message.CardVerificationCode));
+            order.AddEvent(new StartOrderEvent(order.Id, order.CustomerId, orderItemList, order.TotalPrice, message.CardName, message.CardNumber, message.CardExpirationDate, message.CardVerificationCode));
 
             _orderRepository.Update(order);
             return await _orderRepository.UnitOfWork.Commit();
@@ -231,7 +231,7 @@ namespace ShopifyChallenge.Sales.Application.Commands
                 return false;
             }
 
-            order.MakeDraft();
+            order.CancelOrder();
             return await _orderRepository.UnitOfWork.Commit();
         }
 

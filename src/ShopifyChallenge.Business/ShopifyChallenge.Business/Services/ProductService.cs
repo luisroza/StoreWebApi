@@ -74,9 +74,12 @@ namespace ShopifyChallenge.Catalog.Application.Services
             return _mapper.Map<ProductViewModel>(await _productRepository.GetImageById(id));
         }
 
-        public async Task AddImage(ProductImageViewModel productImageViewModel)
+        public async Task AddImage(Guid id, ProductImageViewModel productImageViewModel)
         {
+            var product = await _productRepository.GetById(id);
             var image = _mapper.Map<ProductImage>(productImageViewModel);
+            
+            product.AddImage(image);
             _productRepository.AddImage(image);
 
             await _productRepository.UnitOfWork.Commit();

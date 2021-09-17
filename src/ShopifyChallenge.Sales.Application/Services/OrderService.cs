@@ -62,14 +62,19 @@ namespace ShopifyChallenge.Sales.Application.Services
             {
                 ordersView.Add(new OrderViewModel
                 {
-                    TotalPrice = order.TotalPrice,
-                    OrderStatus = (int)order.OrderStatus,
                     Code = order.Code,
-                    CreateDate = order.CreateDate
+                    CreateDate = order.CreateDate,
+                    OrderStatus = (int)order.OrderStatus,
+                    TotalPrice = order.TotalPrice
                 });
             }
 
             return ordersView;
+        }
+
+        public async Task<Order> GetById(Guid orderId)
+        {
+            return await _orderRepository.GetById(orderId);
         }
     }
 }

@@ -82,9 +82,9 @@ namespace ShopifyChallenge.Sales.Data.Repository
             _context.OrderLines.Remove(orderLine);
         }
 
-        public async Task<Coupon> GetVoucherByCode(string Code)
+        public async Task<Coupon> GetCouponByCode(string code)
         {
-            return await _context.Coupons.FirstOrDefaultAsync(p => p.Code == Code);
+            return await _context.Coupons.FirstOrDefaultAsync(p => p.Code == code);
         }
 
         public void Dispose()

@@ -6,11 +6,11 @@ using ShopifyChallenge.Catalog.Application.ViewModels;
 using ShopifyChallenge.Core.Communication.Mediator;
 using ShopifyChallenge.Core.Communication.Messages.Notifications;
 using ShopifyChallenge.WebAPI.Extensions;
+using ShopifyChallenge.WebAPI.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
-using ShopifyChallenge.WebAPI.ViewModels;
 
 namespace ShopifyChallenge.WebAPI.Controllers
 {
@@ -20,7 +20,6 @@ namespace ShopifyChallenge.WebAPI.Controllers
     public class ProductController : BaseController
     {
         private readonly IProductService _productService;
-        private readonly IMediatorHandler _mediatorHandler;
 
         public ProductController(INotificationHandler<DomainNotification> notification,
                                   IProductService productService,
@@ -94,11 +93,11 @@ namespace ShopifyChallenge.WebAPI.Controllers
                 var imgName = Guid.NewGuid() + "_" + image.Name;
                 if (!UploadFile(image.FileBase, imgName))
                 {
-                    return CustomResponse(imageViewModelList);
+                    return CustomResponse(image);
                 }
 
                 image.ProductId = id;
-                await _productService.AddImage(image);
+                await _productService.AddImage(id, image);
             }
 
             return CustomResponse(imageViewModelList);
@@ -109,7 +108,6 @@ namespace ShopifyChallenge.WebAPI.Controllers
         public async Task<ActionResult<ProductImageViewModel>> RemoveImage(Guid id)
         {
             var productImageViewModel = await _productService.GetImageById(id);
-
             if (productImageViewModel == null) return NotFound();
 
             await _productService.RemoveImage(id);

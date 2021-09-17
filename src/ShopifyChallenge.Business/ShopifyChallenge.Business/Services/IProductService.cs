@@ -17,7 +17,7 @@ namespace ShopifyChallenge.Catalog.Application.Services
         Task<ProductViewModel> AddInventory(Guid id, int quantity);
 
         Task<ProductViewModel> GetImageById(Guid id);
-        Task AddImage(ProductImageViewModel productImageView);
-        Task RemoveImage(Guid Id);
+        Task AddImage(Guid id, ProductImageViewModel productImageView);
+        Task RemoveImage(Guid id);
     }
 }
