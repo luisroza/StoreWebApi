@@ -1,7 +1,6 @@
-﻿using ShopifyChallenge.Core.Communication;
+﻿using ShopifyChallenge.Core.Communication.Messages;
 using System;
 using System.Collections.Generic;
-using ShopifyChallenge.Core.Communication.Messages;
 
 namespace ShopifyChallenge.Core.DomainObjects
 {

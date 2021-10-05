@@ -1,6 +1,5 @@
 ﻿using MediatR;
 using ShopifyChallenge.Catalog.Application.Services;
-using ShopifyChallenge.Catalog.Domain;
 using ShopifyChallenge.Core.Communication.Mediator;
 using ShopifyChallenge.Core.Communication.Messages.IntegrationEvents;
 using System.Threading;
@@ -11,13 +10,11 @@ namespace ShopifyChallenge.Catalog.Application.Events
     public class ProductEventHandler : INotificationHandler<OrderStartedEvent>,
         INotificationHandler<OrderCancelledEvent>
     {
-        private readonly IProductRepository _productRepository;
         private readonly IInventoryService _inventoryService;
         private readonly IMediatorHandler _mediatorHandler;
 
-        public ProductEventHandler(IProductRepository productRepository, IInventoryService inventoryService, IMediatorHandler mediatorHandler)
+        public ProductEventHandler(IInventoryService inventoryService, IMediatorHandler mediatorHandler)
         {
-            _productRepository = productRepository;
             _inventoryService = inventoryService;
             _mediatorHandler = mediatorHandler;
         }

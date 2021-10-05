@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using ShopifyChallenge.Catalog.Application.ViewModels;
 using ShopifyChallenge.Catalog.Domain;
-using System.Collections.Generic;
 
 namespace ShopifyChallenge.Catalog.Application.AutoMapper
 {

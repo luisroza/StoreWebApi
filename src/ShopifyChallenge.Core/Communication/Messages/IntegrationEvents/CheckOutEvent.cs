@@ -1,5 +1,4 @@
-﻿using FluentValidation;
-using System;
+﻿using System;
 
 namespace ShopifyChallenge.Core.Communication.Messages.IntegrationEvents
 {

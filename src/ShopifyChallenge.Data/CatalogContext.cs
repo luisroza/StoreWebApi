@@ -1,11 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ShopifyChallenge.Catalog.Domain;
-using ShopifyChallenge.Core.Communication;
+using ShopifyChallenge.Core.Communication.Messages;
 using ShopifyChallenge.Core.Data;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
-using ShopifyChallenge.Core.Communication.Messages;
 
 namespace ShopifyChallenge.Catalog.Data
 {

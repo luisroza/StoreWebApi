@@ -23,7 +23,6 @@ namespace ShopifyChallenge.WebAPI.Controllers
     {
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly UserManager<IdentityUser> _userManager;
-        private readonly IMediatorHandler _mediatorHandler;
         private readonly AppSettings _appSettings;
         private readonly ILogger _logger;
 
@@ -38,12 +37,11 @@ namespace ShopifyChallenge.WebAPI.Controllers
             _signInManager = signInManager;
             _userManager = userManager;
             _logger = logger;
-            _mediatorHandler = mediatorHandler;
             _appSettings = appSettings.Value;
         }
 
         [HttpPost("new-account")]
-        public async Task<ActionResult> Registrar(RegisterUserViewModel registerUser)
+        public async Task<ActionResult> Register(RegisterUserViewModel registerUser)
         {
             if (!ModelState.IsValid) return CustomResponse(ModelState);
 

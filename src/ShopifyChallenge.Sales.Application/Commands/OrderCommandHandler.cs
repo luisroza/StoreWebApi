@@ -4,13 +4,13 @@ using ShopifyChallenge.Core.Communication.Messages;
 using ShopifyChallenge.Core.Communication.Messages.IntegrationEvents;
 using ShopifyChallenge.Core.Communication.Messages.Notifications;
 using ShopifyChallenge.Core.DomainObjects.DTO;
+using ShopifyChallenge.Core.Extentions;
 using ShopifyChallenge.Sales.Application.Events;
 using ShopifyChallenge.Sales.Domain;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using ShopifyChallenge.Core.Extentions;
 
 namespace ShopifyChallenge.Sales.Application.Commands
 {

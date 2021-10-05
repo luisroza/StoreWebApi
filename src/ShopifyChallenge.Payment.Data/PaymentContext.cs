@@ -1,12 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using ShopifyChallenge.Core.Communication;
 using ShopifyChallenge.Core.Communication.Mediator;
+using ShopifyChallenge.Core.Communication.Messages;
 using ShopifyChallenge.Core.Data;
 using ShopifyChallenge.Payment.Domain;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
-using ShopifyChallenge.Core.Communication.Messages;
 
 namespace ShopifyChallenge.Payment.Data
 {
@@ -14,10 +13,10 @@ namespace ShopifyChallenge.Payment.Data
     {
         private readonly IMediatorHandler _mediatorHandler;
 
-        public PaymentContext(DbContextOptions<PaymentContext> options, IMediatorHandler rebusHandler)
+        public PaymentContext(DbContextOptions<PaymentContext> options, IMediatorHandler mediatorHandler)
             : base(options)
         {
-            _mediatorHandler = rebusHandler ?? throw new ArgumentException(nameof(rebusHandler));
+            _mediatorHandler = mediatorHandler ?? throw new ArgumentException(nameof(mediatorHandler));
         }
 
         public DbSet<Domain.Payment> Payments { get; set; }

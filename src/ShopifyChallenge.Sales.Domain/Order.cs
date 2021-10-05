@@ -103,13 +103,13 @@ namespace ShopifyChallenge.Sales.Domain
             if (ExistingOrderLine(item))
             {
                 var existentOrderLine = _orderLines.FirstOrDefault(p => p.ProductId == item.ProductId);
-                existentOrderLine.AddUnit(item.Quantity);
+                existentOrderLine?.AddUnit(item.Quantity);
                 item = existentOrderLine;
 
                 _orderLines.Remove(existentOrderLine);
             }
 
-            item.CalculatePrice();
+            item?.CalculatePrice();
             _orderLines.Add(item);
 
             CalculateOrderPrice();
