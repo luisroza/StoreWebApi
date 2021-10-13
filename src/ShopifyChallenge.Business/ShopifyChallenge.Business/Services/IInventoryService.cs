@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
-using ShopifyChallenge.Core.DomainObjects.DTO;
+using Store.Core.DomainObjects.DTO;
 
-namespace ShopifyChallenge.Catalog.Application.Services
+namespace Store.Catalog.Application.Services
 {
     public interface IInventoryService : IDisposable
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ShopifyChallenge.Core.Extentions
+namespace Store.Core.Extentions
 {
     public static class EnumerableExtensions
     {

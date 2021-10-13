@@ -1,13 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using ShopifyChallenge.Core.Communication.Mediator;
-using ShopifyChallenge.Core.Communication.Messages;
-using ShopifyChallenge.Core.Data;
-using ShopifyChallenge.Sales.Domain;
+using Store.Core.Communication.Mediator;
+using Store.Core.Communication.Messages;
+using Store.Core.Data;
+using Store.Sales.Domain;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ShopifyChallenge.Sales.Data
+namespace Store.Sales.Data
 {
     public class SalesContext : DbContext, IUnitOfWork
     {

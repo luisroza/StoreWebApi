@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace ShopifyChallenge.WebAPI.Setup
+namespace Store.WebAPI.Setup
 {
     public static class ApiConfig
     {

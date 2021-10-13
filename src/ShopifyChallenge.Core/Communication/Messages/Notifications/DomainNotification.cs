@@ -1,7 +1,7 @@
 ﻿using System;
 using MediatR;
 
-namespace ShopifyChallenge.Core.Communication.Messages.Notifications
+namespace Store.Core.Communication.Messages.Notifications
 {
     public class DomainNotification : Message, INotification
     {

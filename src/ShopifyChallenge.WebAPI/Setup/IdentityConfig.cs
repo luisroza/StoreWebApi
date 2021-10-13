@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
-using ShopifyChallenge.WebAPI.Data;
-using ShopifyChallenge.WebAPI.Extensions;
+using Store.WebAPI.Data;
+using Store.WebAPI.Extensions;
 using System.Text;
 
-namespace ShopifyChallenge.WebAPI.Setup
+namespace Store.WebAPI.Setup
 {
     public static class IdentityConfig
     {

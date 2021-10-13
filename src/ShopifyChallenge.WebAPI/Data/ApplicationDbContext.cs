@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace ShopifyChallenge.WebAPI.Data
+namespace Store.WebAPI.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {

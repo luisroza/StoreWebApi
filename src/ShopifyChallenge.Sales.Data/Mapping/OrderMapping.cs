@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using ShopifyChallenge.Sales.Domain;
+using Store.Sales.Domain;
 
-namespace ShopifyChallenge.Sales.Data.Mapping
+namespace Store.Sales.Data.Mapping
 {
     public class OrderMapping : IEntityTypeConfiguration<Order>
     {

@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using ShopifyChallenge.Catalog.Data;
+using Store.Catalog.Data;
 
-namespace ShopifyChallenge.Catalog.Data.Migrations
+namespace Store.Catalog.Data.Migrations
 {
     [DbContext(typeof(CatalogContext))]
     partial class CatalogContextModelSnapshot : ModelSnapshot
@@ -19,7 +19,7 @@ namespace ShopifyChallenge.Catalog.Data.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("ShopifyChallenge.Catalog.Domain.Product", b =>
+            modelBuilder.Entity("Store.Catalog.Domain.Product", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -52,7 +52,7 @@ namespace ShopifyChallenge.Catalog.Data.Migrations
                     b.ToTable("Product");
                 });
 
-            modelBuilder.Entity("ShopifyChallenge.Catalog.Domain.ProductImage", b =>
+            modelBuilder.Entity("Store.Catalog.Domain.ProductImage", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -71,9 +71,9 @@ namespace ShopifyChallenge.Catalog.Data.Migrations
                     b.ToTable("ProductImage");
                 });
 
-            modelBuilder.Entity("ShopifyChallenge.Catalog.Domain.ProductImage", b =>
+            modelBuilder.Entity("Store.Catalog.Domain.ProductImage", b =>
                 {
-                    b.HasOne("ShopifyChallenge.Catalog.Domain.Product", "Product")
+                    b.HasOne("Store.Catalog.Domain.Product", "Product")
                         .WithMany("ProductImages")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)

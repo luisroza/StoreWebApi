@@ -1,11 +1,11 @@
 ﻿using MediatR;
-using ShopifyChallenge.Core.Communication.Mediator;
-using ShopifyChallenge.Core.Communication.Messages.IntegrationEvents;
-using ShopifyChallenge.Sales.Application.Commands;
+using Store.Core.Communication.Mediator;
+using Store.Core.Communication.Messages.IntegrationEvents;
+using Store.Sales.Application.Commands;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace ShopifyChallenge.Sales.Application.Events
+namespace Store.Sales.Application.Events
 {
     public class OrderEventHandler :
         INotificationHandler<DraftOrderStartedEvent>,

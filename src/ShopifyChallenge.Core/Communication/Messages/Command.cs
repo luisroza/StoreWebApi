@@ -2,7 +2,7 @@
 using MediatR;
 using System;
 
-namespace ShopifyChallenge.Core.Communication.Messages
+namespace Store.Core.Communication.Messages
 {
     public abstract class Command : Message, IRequest<bool>
     {

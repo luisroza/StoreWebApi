@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace ShopifyChallenge.Sales.Data.Migrations
+namespace Store.Sales.Data.Migrations
 {
     public partial class InitialSales : Migration
     {

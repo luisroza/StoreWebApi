@@ -5,9 +5,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using ShopifyChallenge.WebAPI.Setup;
+using Store.WebAPI.Setup;
 
-namespace ShopifyChallenge.WebAPI
+namespace Store.WebAPI
 {
     public class Startup
     {

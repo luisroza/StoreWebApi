@@ -1,4 +1,4 @@
-﻿namespace ShopifyChallenge.Payment.Domain
+﻿namespace Store.Payment.Domain
 {
     public class Product
     {

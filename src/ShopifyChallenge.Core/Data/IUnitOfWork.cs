@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace ShopifyChallenge.Core.Data
+namespace Store.Core.Data
 {
     public interface IUnitOfWork
     {

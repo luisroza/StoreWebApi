@@ -1,4 +1,4 @@
-﻿namespace ShopifyChallenge.WebAPI.Extensions
+﻿namespace Store.WebAPI.Extensions
 {
     public class AppSettings
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace ShopifyChallenge.Payment.Application.AntiCorruption
+namespace Store.Payment.Application.AntiCorruption
 {
     public class ConfigurationManager : IConfigurationManager
     {

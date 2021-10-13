@@ -1,4 +1,4 @@
-﻿namespace ShopifyChallenge.Sales.Domain
+﻿namespace Store.Sales.Domain
 {
     public enum CouponType
     {

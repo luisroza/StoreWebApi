@@ -1,4 +1,4 @@
-﻿namespace ShopifyChallenge.Sales.Application.ViewModels
+﻿namespace Store.Sales.Application.ViewModels
 {
     public class CartPaymentViewModel
     {

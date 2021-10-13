@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ShopifyChallenge.Sales.Application.ViewModels
+namespace Store.Sales.Application.ViewModels
 {
     public class CartOrderLineViewModel
     {

@@ -1,7 +1,7 @@
 ﻿using System;
-using ShopifyChallenge.Core.DomainObjects;
+using Store.Core.DomainObjects;
 
-namespace ShopifyChallenge.Core.Data
+namespace Store.Core.Data
 {
     public interface IRepository<T> : IDisposable where T : IAggregateRoot
     {

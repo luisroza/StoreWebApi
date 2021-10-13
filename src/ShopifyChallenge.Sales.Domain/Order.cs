@@ -1,10 +1,10 @@
 ﻿using FluentValidation.Results;
-using ShopifyChallenge.Core.DomainObjects;
+using Store.Core.DomainObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ShopifyChallenge.Sales.Domain
+namespace Store.Sales.Domain
 {
     public class Order : Entity, IAggregateRoot
     {

@@ -1,8 +1,8 @@
-﻿using ShopifyChallenge.Core.Communication.Messages;
-using ShopifyChallenge.Core.DomainObjects.DTO;
+﻿using Store.Core.Communication.Messages;
+using Store.Core.DomainObjects.DTO;
 using System;
 
-namespace ShopifyChallenge.Sales.Application.Events
+namespace Store.Sales.Application.Events
 {
     public class StartOrderEvent : Event
     {

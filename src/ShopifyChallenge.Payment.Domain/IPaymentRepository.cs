@@ -1,6 +1,6 @@
-﻿using ShopifyChallenge.Core.Data;
+﻿using Store.Core.Data;
 
-namespace ShopifyChallenge.Payment.Domain
+namespace Store.Payment.Domain
 {
     public interface IPaymentRepository : IRepository<Payment>
     {

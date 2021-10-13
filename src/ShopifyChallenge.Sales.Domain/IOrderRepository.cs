@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using ShopifyChallenge.Core.Data;
+using Store.Core.Data;
 
-namespace ShopifyChallenge.Sales.Domain
+namespace Store.Sales.Domain
 {
     public interface IOrderRepository : IRepository<Order>
     {

@@ -1,8 +1,8 @@
-﻿using ShopifyChallenge.Core.Communication.Messages;
+﻿using Store.Core.Communication.Messages;
 using System;
 using System.Collections.Generic;
 
-namespace ShopifyChallenge.Core.DomainObjects
+namespace Store.Core.DomainObjects
 {
     public abstract class Entity
     {

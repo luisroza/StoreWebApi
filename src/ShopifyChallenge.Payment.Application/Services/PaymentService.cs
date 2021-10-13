@@ -1,11 +1,11 @@
-﻿using ShopifyChallenge.Core.Communication.Mediator;
-using ShopifyChallenge.Core.Communication.Messages.IntegrationEvents;
-using ShopifyChallenge.Core.Communication.Messages.Notifications;
-using ShopifyChallenge.Core.DomainObjects.DTO;
-using ShopifyChallenge.Payment.Domain;
+﻿using Store.Core.Communication.Mediator;
+using Store.Core.Communication.Messages.IntegrationEvents;
+using Store.Core.Communication.Messages.Notifications;
+using Store.Core.DomainObjects.DTO;
+using Store.Payment.Domain;
 using System.Threading.Tasks;
 
-namespace ShopifyChallenge.Payment.Application.Services
+namespace Store.Payment.Application.Services
 {
     public class PaymentService : IPaymentService
     {

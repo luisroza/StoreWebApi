@@ -1,9 +1,9 @@
-﻿using ShopifyChallenge.Core.Communication.Mediator;
-using ShopifyChallenge.Core.DomainObjects;
+﻿using Store.Core.Communication.Mediator;
+using Store.Core.DomainObjects;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ShopifyChallenge.Sales.Data
+namespace Store.Sales.Data
 {
     public static class MediatorExtension 
     {

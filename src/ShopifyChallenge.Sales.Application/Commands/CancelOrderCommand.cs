@@ -1,8 +1,8 @@
 ﻿using System;
 using FluentValidation;
-using ShopifyChallenge.Core.Communication.Messages;
+using Store.Core.Communication.Messages;
 
-namespace ShopifyChallenge.Sales.Application.Commands
+namespace Store.Sales.Application.Commands
 {
     public class CancelOrderCommand : Command
     {

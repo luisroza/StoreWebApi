@@ -1,12 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using ShopifyChallenge.Core.Data;
-using ShopifyChallenge.Sales.Domain;
+using Store.Core.Data;
+using Store.Sales.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ShopifyChallenge.Sales.Data.Repository
+namespace Store.Sales.Data.Repository
 {
     public class OrderRepository : IOrderRepository
     {

@@ -2,7 +2,7 @@
 using FluentValidation.Results;
 using MediatR;
 
-namespace ShopifyChallenge.Core.Communication.Messages
+namespace Store.Core.Communication.Messages
 {
     public abstract class Event : Message, INotification
     {

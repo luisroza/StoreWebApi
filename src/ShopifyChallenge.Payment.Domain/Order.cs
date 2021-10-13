@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ShopifyChallenge.Payment.Domain
+namespace Store.Payment.Domain
 {
     public class Order
     {

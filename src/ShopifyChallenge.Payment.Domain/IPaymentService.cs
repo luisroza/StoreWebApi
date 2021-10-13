@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
-using ShopifyChallenge.Core.DomainObjects.DTO;
+using Store.Core.DomainObjects.DTO;
 
-namespace ShopifyChallenge.Payment.Domain
+namespace Store.Payment.Domain
 {
     public interface IPaymentService
     {

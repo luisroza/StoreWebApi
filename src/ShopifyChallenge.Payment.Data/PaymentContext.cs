@@ -1,13 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using ShopifyChallenge.Core.Communication.Mediator;
-using ShopifyChallenge.Core.Communication.Messages;
-using ShopifyChallenge.Core.Data;
-using ShopifyChallenge.Payment.Domain;
+using Store.Core.Communication.Mediator;
+using Store.Core.Communication.Messages;
+using Store.Core.Data;
+using Store.Payment.Domain;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ShopifyChallenge.Payment.Data
+namespace Store.Payment.Data
 {
     public class PaymentContext : DbContext, IUnitOfWork
     {

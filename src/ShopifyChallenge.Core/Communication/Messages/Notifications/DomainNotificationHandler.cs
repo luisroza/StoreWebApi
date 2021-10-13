@@ -4,7 +4,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
 
-namespace ShopifyChallenge.Core.Communication.Messages.Notifications
+namespace Store.Core.Communication.Messages.Notifications
 {
     public class DomainNotificationHandler : INotificationHandler<DomainNotification>
     {

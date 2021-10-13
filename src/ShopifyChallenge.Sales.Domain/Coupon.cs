@@ -1,10 +1,10 @@
 ﻿using FluentValidation;
-using ShopifyChallenge.Core.DomainObjects;
+using Store.Core.DomainObjects;
 using System;
 using System.Collections.Generic;
 using FluentValidation.Results;
 
-namespace ShopifyChallenge.Sales.Domain
+namespace Store.Sales.Domain
 {
     public class Coupon : Entity
     {

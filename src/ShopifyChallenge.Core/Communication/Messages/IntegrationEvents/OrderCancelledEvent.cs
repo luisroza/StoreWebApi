@@ -1,7 +1,7 @@
-﻿using ShopifyChallenge.Core.DomainObjects.DTO;
+﻿using Store.Core.DomainObjects.DTO;
 using System;
 
-namespace ShopifyChallenge.Core.Communication.Messages.IntegrationEvents
+namespace Store.Core.Communication.Messages.IntegrationEvents
 {
     public class OrderCancelledEvent : IntegrationEvent
     {

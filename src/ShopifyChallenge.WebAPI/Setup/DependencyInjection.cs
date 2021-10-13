@@ -1,26 +1,26 @@
 ﻿using MediatR;
 using Microsoft.Extensions.DependencyInjection;
-using ShopifyChallenge.Catalog.Application.Services;
-using ShopifyChallenge.Catalog.Data;
-using ShopifyChallenge.Catalog.Data.Repository;
-using ShopifyChallenge.Catalog.Domain;
-using ShopifyChallenge.Core.Communication.Mediator;
-using ShopifyChallenge.Core.Communication.Messages.IntegrationEvents;
-using ShopifyChallenge.Core.Communication.Messages.Notifications;
-using ShopifyChallenge.Payment.Application.AntiCorruption;
-using ShopifyChallenge.Payment.Application.Events;
-using ShopifyChallenge.Payment.Application.Services;
-using ShopifyChallenge.Payment.Data;
-using ShopifyChallenge.Payment.Data.Repository;
-using ShopifyChallenge.Payment.Domain;
-using ShopifyChallenge.Sales.Application.Commands;
-using ShopifyChallenge.Sales.Application.Events;
-using ShopifyChallenge.Sales.Application.Services;
-using ShopifyChallenge.Sales.Data;
-using ShopifyChallenge.Sales.Data.Repository;
-using ShopifyChallenge.Sales.Domain;
+using Store.Catalog.Application.Services;
+using Store.Catalog.Data;
+using Store.Catalog.Data.Repository;
+using Store.Catalog.Domain;
+using Store.Core.Communication.Mediator;
+using Store.Core.Communication.Messages.IntegrationEvents;
+using Store.Core.Communication.Messages.Notifications;
+using Store.Payment.Application.AntiCorruption;
+using Store.Payment.Application.Events;
+using Store.Payment.Application.Services;
+using Store.Payment.Data;
+using Store.Payment.Data.Repository;
+using Store.Payment.Domain;
+using Store.Sales.Application.Commands;
+using Store.Sales.Application.Events;
+using Store.Sales.Application.Services;
+using Store.Sales.Data;
+using Store.Sales.Data.Repository;
+using Store.Sales.Domain;
 
-namespace ShopifyChallenge.WebAPI.Setup
+namespace Store.WebAPI.Setup
 {
     public static class DependencyInjection
     {

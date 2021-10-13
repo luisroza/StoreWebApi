@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace ShopifyChallenge.Catalog.Data.Migrations
+namespace Store.Catalog.Data.Migrations
 {
     public partial class InitialCatalog : Migration
     {

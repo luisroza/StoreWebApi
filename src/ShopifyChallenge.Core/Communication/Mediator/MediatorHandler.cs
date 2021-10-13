@@ -1,10 +1,10 @@
 ﻿using MediatR;
-using ShopifyChallenge.Core.Communication.Messages;
-using ShopifyChallenge.Core.Communication.Messages.DomainEvents;
-using ShopifyChallenge.Core.Communication.Messages.Notifications;
+using Store.Core.Communication.Messages;
+using Store.Core.Communication.Messages.DomainEvents;
+using Store.Core.Communication.Messages.Notifications;
 using System.Threading.Tasks;
 
-namespace ShopifyChallenge.Core.Communication.Mediator
+namespace Store.Core.Communication.Mediator
 {
     public class MediatorHandler : IMediatorHandler
     {

@@ -1,14 +1,14 @@
 ﻿using System;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using ShopifyChallenge.Core.Communication.Mediator;
-using ShopifyChallenge.Core.Communication.Messages.Notifications;
-using ShopifyChallenge.Sales.Application.Services;
-using ShopifyChallenge.WebAPI.ViewModels;
+using Store.Core.Communication.Mediator;
+using Store.Core.Communication.Messages.Notifications;
+using Store.Sales.Application.Services;
+using Store.WebAPI.ViewModels;
 using System.Threading.Tasks;
-using ShopifyChallenge.Sales.Application.Commands;
+using Store.Sales.Application.Commands;
 
-namespace ShopifyChallenge.WebAPI.Controllers
+namespace Store.WebAPI.Controllers
 {
     public class OrderController : BaseController
     {

@@ -1,4 +1,4 @@
-﻿namespace ShopifyChallenge.Payment.Application.AntiCorruption
+﻿namespace Store.Payment.Application.AntiCorruption
 {
     public interface IConfigurationManager
     {

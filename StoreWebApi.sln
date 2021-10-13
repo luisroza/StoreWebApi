@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopifyChallenge.Catalog.Application", "src\ShopifyChallenge.Business\ShopifyChallenge.Business\ShopifyChallenge.Catalog.Application.csproj", "{9A0BDDB3-0BA3-4299-B8E1-A7E06895C68E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Store.Catalog.Application", "src\ShopifyChallenge.Business\ShopifyChallenge.Business\Store.Catalog.Application.csproj", "{9A0BDDB3-0BA3-4299-B8E1-A7E06895C68E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopifyChallenge.Catalog.Data", "src\ShopifyChallenge.Data\ShopifyChallenge.Catalog.Data.csproj", "{C2ECF204-D9B7-406D-90D2-87BBEE67000A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Store.Catalog.Data", "src\ShopifyChallenge.Data\Store.Catalog.Data.csproj", "{C2ECF204-D9B7-406D-90D2-87BBEE67000A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Catalog", "Catalog", "{789D9F8D-F1DD-4EA1-9023-5C6735EBE679}"
 EndProject
@@ -17,25 +17,25 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApps", "WebApps", "{A251
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{9F2C5CD5-6EF0-4351-A579-D3BDE6254218}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopifyChallenge.Core", "src\ShopifyChallenge.Core\ShopifyChallenge.Core.csproj", "{B5B8FC26-DCCA-4EAC-B301-B188798287C5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Store.Core", "src\ShopifyChallenge.Core\Store.Core.csproj", "{B5B8FC26-DCCA-4EAC-B301-B188798287C5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopifyChallenge.Catalog.Domain", "src\ShopifyChallenge.Catalog.Domain\ShopifyChallenge.Catalog.Domain.csproj", "{2660DA0C-A7F5-476E-BEEE-0AD27D1B5904}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Store.Catalog.Domain", "src\ShopifyChallenge.Catalog.Domain\Store.Catalog.Domain.csproj", "{2660DA0C-A7F5-476E-BEEE-0AD27D1B5904}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopifyChallenge.Sales.Application", "src\ShopifyChallenge.Sales.Application\ShopifyChallenge.Sales.Application.csproj", "{7AA10AD5-C996-4E5D-97D0-615DBD4636A4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Store.Sales.Application", "src\ShopifyChallenge.Sales.Application\Store.Sales.Application.csproj", "{7AA10AD5-C996-4E5D-97D0-615DBD4636A4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopifyChallenge.Sales.Data", "src\ShopifyChallenge.Sales.Data\ShopifyChallenge.Sales.Data.csproj", "{34944177-3517-41DB-990D-C8BC9A0D2F26}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Store.Sales.Data", "src\ShopifyChallenge.Sales.Data\Store.Sales.Data.csproj", "{34944177-3517-41DB-990D-C8BC9A0D2F26}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopifyChallenge.Sales.Domain", "src\ShopifyChallenge.Sales.Domain\ShopifyChallenge.Sales.Domain.csproj", "{67ACE0CD-FB87-4AA2-97D2-C4880E126FEA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Store.Sales.Domain", "src\ShopifyChallenge.Sales.Domain\Store.Sales.Domain.csproj", "{67ACE0CD-FB87-4AA2-97D2-C4880E126FEA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Payment", "Payment", "{789A8FC2-EA4B-4197-A08E-FFC0349ED23D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopifyChallenge.Payment.Application", "src\ShopifyChallenge.Payment.Application\ShopifyChallenge.Payment.Application.csproj", "{3ECF4436-8DBC-441D-94BE-EAEB331FCD38}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Store.Payment.Application", "src\ShopifyChallenge.Payment.Application\Store.Payment.Application.csproj", "{3ECF4436-8DBC-441D-94BE-EAEB331FCD38}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopifyChallenge.Payment.Data", "src\ShopifyChallenge.Payment.Data\ShopifyChallenge.Payment.Data.csproj", "{89EFD909-61B7-410B-AFCE-C8CF1A677C56}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Store.Payment.Data", "src\ShopifyChallenge.Payment.Data\Store.Payment.Data.csproj", "{89EFD909-61B7-410B-AFCE-C8CF1A677C56}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopifyChallenge.Payment.Domain", "src\ShopifyChallenge.Payment.Domain\ShopifyChallenge.Payment.Domain.csproj", "{CE4D5529-DEE4-487D-B118-93BE9BC19E2B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Store.Payment.Domain", "src\ShopifyChallenge.Payment.Domain\Store.Payment.Domain.csproj", "{CE4D5529-DEE4-487D-B118-93BE9BC19E2B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopifyChallenge.WebAPI", "src\ShopifyChallenge.WebAPI\ShopifyChallenge.WebAPI.csproj", "{63925A7F-4B3C-46AA-B4AF-F1BCF44C58CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Store.WebAPI", "src\ShopifyChallenge.WebAPI\Store.WebAPI.csproj", "{63925A7F-4B3C-46AA-B4AF-F1BCF44C58CA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

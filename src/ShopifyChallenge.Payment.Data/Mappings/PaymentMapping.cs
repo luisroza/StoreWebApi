@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace ShopifyChallenge.Payment.Data.Mappings
+namespace Store.Payment.Data.Mappings
 {
     public class PaymentMapping : IEntityTypeConfiguration<Domain.Payment>
     {

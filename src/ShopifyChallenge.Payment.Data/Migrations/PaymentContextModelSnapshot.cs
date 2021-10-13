@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using ShopifyChallenge.Payment.Data;
+using Store.Payment.Data;
 
-namespace ShopifyChallenge.Payment.Data.Migrations
+namespace Store.Payment.Data.Migrations
 {
     [DbContext(typeof(PaymentContext))]
     partial class PaymentContextModelSnapshot : ModelSnapshot
@@ -19,7 +19,7 @@ namespace ShopifyChallenge.Payment.Data.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("ShopifyChallenge.Payment.Domain.Payment", b =>
+            modelBuilder.Entity("Store.Payment.Domain.Payment", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -60,7 +60,7 @@ namespace ShopifyChallenge.Payment.Data.Migrations
                     b.ToTable("Payment");
                 });
 
-            modelBuilder.Entity("ShopifyChallenge.Payment.Domain.Transaction", b =>
+            modelBuilder.Entity("Store.Payment.Domain.Transaction", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -86,11 +86,11 @@ namespace ShopifyChallenge.Payment.Data.Migrations
                     b.ToTable("Transaction");
                 });
 
-            modelBuilder.Entity("ShopifyChallenge.Payment.Domain.Transaction", b =>
+            modelBuilder.Entity("Store.Payment.Domain.Transaction", b =>
                 {
-                    b.HasOne("ShopifyChallenge.Payment.Domain.Payment", "Payment")
+                    b.HasOne("Store.Payment.Domain.Payment", "Payment")
                         .WithOne("Transaction")
-                        .HasForeignKey("ShopifyChallenge.Payment.Domain.Transaction", "PaymentId")
+                        .HasForeignKey("Store.Payment.Domain.Transaction", "PaymentId")
                         .IsRequired();
                 });
 #pragma warning restore 612, 618

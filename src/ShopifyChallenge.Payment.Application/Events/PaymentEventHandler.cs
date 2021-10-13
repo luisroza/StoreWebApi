@@ -1,11 +1,11 @@
 ﻿using MediatR;
-using ShopifyChallenge.Core.Communication.Messages.IntegrationEvents;
-using ShopifyChallenge.Core.DomainObjects.DTO;
-using ShopifyChallenge.Payment.Domain;
+using Store.Core.Communication.Messages.IntegrationEvents;
+using Store.Core.DomainObjects.DTO;
+using Store.Payment.Domain;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace ShopifyChallenge.Payment.Application.Events
+namespace Store.Payment.Application.Events
 {
     public class PaymentEventHandler : INotificationHandler<OrderInventoryConfirmedEvent>
     {

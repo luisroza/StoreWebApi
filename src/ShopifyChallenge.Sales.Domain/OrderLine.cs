@@ -1,7 +1,7 @@
-﻿using ShopifyChallenge.Core.DomainObjects;
+﻿using Store.Core.DomainObjects;
 using System;
 
-namespace ShopifyChallenge.Sales.Domain
+namespace Store.Sales.Domain
 {
     public class OrderLine : Entity
     {

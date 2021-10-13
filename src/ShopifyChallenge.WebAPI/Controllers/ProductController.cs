@@ -1,18 +1,18 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using ShopifyChallenge.Catalog.Application.Services;
-using ShopifyChallenge.Catalog.Application.ViewModels;
-using ShopifyChallenge.Core.Communication.Mediator;
-using ShopifyChallenge.Core.Communication.Messages.Notifications;
-using ShopifyChallenge.WebAPI.Extensions;
-using ShopifyChallenge.WebAPI.ViewModels;
+using Store.Catalog.Application.Services;
+using Store.Catalog.Application.ViewModels;
+using Store.Core.Communication.Mediator;
+using Store.Core.Communication.Messages.Notifications;
+using Store.WebAPI.Extensions;
+using Store.WebAPI.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 
-namespace ShopifyChallenge.WebAPI.Controllers
+namespace Store.WebAPI.Controllers
 {
     [Authorize]
     [Route("api/[controller]")]

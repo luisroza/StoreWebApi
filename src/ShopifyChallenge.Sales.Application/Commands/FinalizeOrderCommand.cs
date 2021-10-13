@@ -1,8 +1,8 @@
-﻿using ShopifyChallenge.Core.Communication.Messages;
+﻿using Store.Core.Communication.Messages;
 using System;
 using FluentValidation;
 
-namespace ShopifyChallenge.Sales.Application.Commands
+namespace Store.Sales.Application.Commands
 {
     public class FinalizeOrderCommand : Command
     {

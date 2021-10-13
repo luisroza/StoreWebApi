@@ -1,9 +1,9 @@
-﻿using ShopifyChallenge.Catalog.Application.ViewModels;
+﻿using Store.Catalog.Application.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace ShopifyChallenge.Catalog.Application.Services
+namespace Store.Catalog.Application.Services
 {
     public interface IProductService : IDisposable
     {

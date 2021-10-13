@@ -1,7 +1,7 @@
-﻿using ShopifyChallenge.Core.DomainObjects;
+﻿using Store.Core.DomainObjects;
 using System;
 
-namespace ShopifyChallenge.Catalog.Domain
+namespace Store.Catalog.Domain
 {
     public class ProductImage : Entity
     {

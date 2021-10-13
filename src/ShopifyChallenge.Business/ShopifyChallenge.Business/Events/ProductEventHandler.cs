@@ -1,11 +1,11 @@
 ﻿using MediatR;
-using ShopifyChallenge.Catalog.Application.Services;
-using ShopifyChallenge.Core.Communication.Mediator;
-using ShopifyChallenge.Core.Communication.Messages.IntegrationEvents;
+using Store.Catalog.Application.Services;
+using Store.Core.Communication.Mediator;
+using Store.Core.Communication.Messages.IntegrationEvents;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace ShopifyChallenge.Catalog.Application.Events
+namespace Store.Catalog.Application.Events
 {
     public class ProductEventHandler : INotificationHandler<OrderStartedEvent>,
         INotificationHandler<OrderCancelledEvent>

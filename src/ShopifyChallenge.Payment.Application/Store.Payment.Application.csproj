@@ -13,7 +13,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ShopifyChallenge.Core\ShopifyChallenge.Core.csproj" />
+    <ProjectReference Include="..\ShopifyChallenge.Core\Store.Core.csproj" />
+    <ProjectReference Include="..\ShopifyChallenge.Payment.Domain\Store.Payment.Domain.csproj" />
   </ItemGroup>
 
 </Project>

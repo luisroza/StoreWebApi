@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc.Filters;
 using System.Linq;
 using System.Security.Claims;
 
-namespace ShopifyChallenge.WebAPI.Extensions
+namespace Store.WebAPI.Extensions
 {
     public class CustomAuthorization
     {

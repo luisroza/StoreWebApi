@@ -1,18 +1,18 @@
 ﻿using MediatR;
-using ShopifyChallenge.Core.Communication.Mediator;
-using ShopifyChallenge.Core.Communication.Messages;
-using ShopifyChallenge.Core.Communication.Messages.IntegrationEvents;
-using ShopifyChallenge.Core.Communication.Messages.Notifications;
-using ShopifyChallenge.Core.DomainObjects.DTO;
-using ShopifyChallenge.Core.Extentions;
-using ShopifyChallenge.Sales.Application.Events;
-using ShopifyChallenge.Sales.Domain;
+using Store.Core.Communication.Mediator;
+using Store.Core.Communication.Messages;
+using Store.Core.Communication.Messages.IntegrationEvents;
+using Store.Core.Communication.Messages.Notifications;
+using Store.Core.DomainObjects.DTO;
+using Store.Core.Extentions;
+using Store.Sales.Application.Events;
+using Store.Sales.Domain;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace ShopifyChallenge.Sales.Application.Commands
+namespace Store.Sales.Application.Commands
 {
     public class OrderCommandHandler : IRequestHandler<AddOrderLineCommand, bool>,
         IRequestHandler<ApplyCouponCommand, bool>,

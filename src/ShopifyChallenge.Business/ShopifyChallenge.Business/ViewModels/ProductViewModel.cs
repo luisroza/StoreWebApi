@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace ShopifyChallenge.Catalog.Application.ViewModels
+namespace Store.Catalog.Application.ViewModels
 {
     public class ProductViewModel
     {

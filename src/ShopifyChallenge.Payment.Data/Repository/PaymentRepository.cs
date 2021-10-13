@@ -1,7 +1,7 @@
-﻿using ShopifyChallenge.Core.Data;
-using ShopifyChallenge.Payment.Domain;
+﻿using Store.Core.Data;
+using Store.Payment.Domain;
 
-namespace ShopifyChallenge.Payment.Data.Repository
+namespace Store.Payment.Data.Repository
 {
     public class PaymentRepository : IPaymentRepository
     {

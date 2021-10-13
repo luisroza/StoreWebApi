@@ -1,10 +1,10 @@
-﻿using ShopifyChallenge.Sales.Application.ViewModels;
-using ShopifyChallenge.Sales.Domain;
+﻿using Store.Sales.Application.ViewModels;
+using Store.Sales.Domain;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace ShopifyChallenge.Sales.Application.Services
+namespace Store.Sales.Application.Services
 {
     public interface IOrderService
     {

@@ -1,9 +1,9 @@
-﻿using ShopifyChallenge.Core.DomainObjects;
+﻿using Store.Core.DomainObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ShopifyChallenge.Catalog.Domain
+namespace Store.Catalog.Domain
 {
     public class Product : Entity, IAggregateRoot
     {

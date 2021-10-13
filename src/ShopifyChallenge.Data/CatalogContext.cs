@@ -1,12 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using ShopifyChallenge.Catalog.Domain;
-using ShopifyChallenge.Core.Communication.Messages;
-using ShopifyChallenge.Core.Data;
+using Store.Catalog.Domain;
+using Store.Core.Communication.Messages;
+using Store.Core.Data;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ShopifyChallenge.Catalog.Data
+namespace Store.Catalog.Data
 {
     public class CatalogContext : DbContext, IUnitOfWork
     {

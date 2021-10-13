@@ -1,6 +1,6 @@
-﻿using ShopifyChallenge.Payment.Domain;
+﻿using Store.Payment.Domain;
 
-namespace ShopifyChallenge.Payment.Application.AntiCorruption
+namespace Store.Payment.Application.AntiCorruption
 {
     public class CreditCardPaymentFacade : ICreditCardPaymentFacade
     {

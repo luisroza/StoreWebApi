@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ShopifyChallenge.Sales.Application.ViewModels
+namespace Store.Sales.Application.ViewModels
 {
     public class CartViewModel
     {

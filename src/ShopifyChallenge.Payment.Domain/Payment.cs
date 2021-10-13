@@ -1,7 +1,7 @@
-﻿using ShopifyChallenge.Core.DomainObjects;
+﻿using Store.Core.DomainObjects;
 using System;
 
-namespace ShopifyChallenge.Payment.Domain
+namespace Store.Payment.Domain
 {
     public class Payment : Entity, IAggregateRoot
     {

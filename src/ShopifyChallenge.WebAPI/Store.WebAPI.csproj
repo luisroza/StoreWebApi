@@ -25,16 +25,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ShopifyChallenge.Business\ShopifyChallenge.Business\ShopifyChallenge.Catalog.Application.csproj" />
-    <ProjectReference Include="..\ShopifyChallenge.Catalog.Domain\ShopifyChallenge.Catalog.Domain.csproj" />
-    <ProjectReference Include="..\ShopifyChallenge.Core\ShopifyChallenge.Core.csproj" />
-    <ProjectReference Include="..\ShopifyChallenge.Data\ShopifyChallenge.Catalog.Data.csproj" />
-    <ProjectReference Include="..\ShopifyChallenge.Payment.Application\ShopifyChallenge.Payment.Application.csproj" />
-    <ProjectReference Include="..\ShopifyChallenge.Payment.Data\ShopifyChallenge.Payment.Data.csproj" />
-    <ProjectReference Include="..\ShopifyChallenge.Payment.Domain\ShopifyChallenge.Payment.Domain.csproj" />
-    <ProjectReference Include="..\ShopifyChallenge.Sales.Application\ShopifyChallenge.Sales.Application.csproj" />
-    <ProjectReference Include="..\ShopifyChallenge.Sales.Data\ShopifyChallenge.Sales.Data.csproj" />
-    <ProjectReference Include="..\ShopifyChallenge.Sales.Domain\ShopifyChallenge.Sales.Domain.csproj" />
+    <ProjectReference Include="..\ShopifyChallenge.Business\ShopifyChallenge.Business\Store.Catalog.Application.csproj" />
+    <ProjectReference Include="..\ShopifyChallenge.Catalog.Domain\Store.Catalog.Domain.csproj" />
+    <ProjectReference Include="..\ShopifyChallenge.Core\Store.Core.csproj" />
+    <ProjectReference Include="..\ShopifyChallenge.Data\Store.Catalog.Data.csproj" />
+    <ProjectReference Include="..\ShopifyChallenge.Payment.Application\Store.Payment.Application.csproj" />
+    <ProjectReference Include="..\ShopifyChallenge.Payment.Data\Store.Payment.Data.csproj" />
+    <ProjectReference Include="..\ShopifyChallenge.Payment.Domain\Store.Payment.Domain.csproj" />
+    <ProjectReference Include="..\ShopifyChallenge.Sales.Application\Store.Sales.Application.csproj" />
+    <ProjectReference Include="..\ShopifyChallenge.Sales.Data\Store.Sales.Data.csproj" />
+    <ProjectReference Include="..\ShopifyChallenge.Sales.Domain\Store.Sales.Domain.csproj" />
   </ItemGroup>
 
 </Project>

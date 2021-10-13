@@ -5,8 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AutoMapper" Version="10.1.1" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.18" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.18">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -15,8 +13,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ShopifyChallenge.Core\ShopifyChallenge.Core.csproj" />
-    <ProjectReference Include="..\ShopifyChallenge.Sales.Domain\ShopifyChallenge.Sales.Domain.csproj" />
+    <ProjectReference Include="..\ShopifyChallenge.Core\Store.Core.csproj" />
+    <ProjectReference Include="..\ShopifyChallenge.Sales.Data\Store.Sales.Data.csproj" />
+    <ProjectReference Include="..\ShopifyChallenge.Sales.Domain\Store.Sales.Domain.csproj" />
   </ItemGroup>
 
 </Project>

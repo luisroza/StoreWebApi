@@ -1,7 +1,7 @@
-﻿using ShopifyChallenge.Core.Communication.Messages;
+﻿using Store.Core.Communication.Messages;
 using System;
 
-namespace ShopifyChallenge.Sales.Application.Events
+namespace Store.Sales.Application.Events
 {
     public class UpdateOrderEvent : Event
     {

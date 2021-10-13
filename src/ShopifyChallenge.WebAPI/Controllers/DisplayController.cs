@@ -1,13 +1,13 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using ShopifyChallenge.Catalog.Application.Services;
-using ShopifyChallenge.Core.Communication.Mediator;
-using ShopifyChallenge.Core.Communication.Messages.Notifications;
+using Store.Catalog.Application.Services;
+using Store.Core.Communication.Mediator;
+using Store.Core.Communication.Messages.Notifications;
 using System;
 using System.Threading.Tasks;
-using ShopifyChallenge.WebAPI.ViewModels;
+using Store.WebAPI.ViewModels;
 
-namespace ShopifyChallenge.WebAPI.Controllers
+namespace Store.WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

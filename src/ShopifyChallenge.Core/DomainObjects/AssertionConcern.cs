@@ -1,6 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 
-namespace ShopifyChallenge.Core.DomainObjects
+namespace Store.Core.DomainObjects
 {
     public class AssertionConcern
     {

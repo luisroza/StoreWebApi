@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MediatR" Version="9.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.18" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.18">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -14,7 +14,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ShopifyChallenge.Core\ShopifyChallenge.Core.csproj" />
+    <ProjectReference Include="..\ShopifyChallenge.Core\Store.Core.csproj" />
+    <ProjectReference Include="..\ShopifyChallenge.Payment.Application\Store.Payment.Application.csproj" />
+    <ProjectReference Include="..\ShopifyChallenge.Payment.Domain\Store.Payment.Domain.csproj" />
   </ItemGroup>
 
 </Project>

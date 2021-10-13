@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ShopifyChallenge.Core.DomainObjects.DTO
+namespace Store.Core.DomainObjects.DTO
 {
     public class Item
     {

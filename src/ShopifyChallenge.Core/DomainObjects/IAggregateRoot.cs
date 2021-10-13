@@ -1,4 +1,4 @@
-namespace ShopifyChallenge.Core.DomainObjects
+namespace Store.Core.DomainObjects
 {
     public interface IAggregateRoot { }
 }

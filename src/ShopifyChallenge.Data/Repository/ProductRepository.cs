@@ -1,11 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using ShopifyChallenge.Catalog.Domain;
-using ShopifyChallenge.Core.Data;
+using Store.Catalog.Domain;
+using Store.Core.Data;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace ShopifyChallenge.Catalog.Data.Repository
+namespace Store.Catalog.Data.Repository
 {
     public class ProductRepository : IProductRepository
     {

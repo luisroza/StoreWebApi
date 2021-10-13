@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ShopifyChallenge.Core.Communication.Messages.IntegrationEvents
+namespace Store.Core.Communication.Messages.IntegrationEvents
 {
     public class PaymentRejectedEvent : IntegrationEvent
     {

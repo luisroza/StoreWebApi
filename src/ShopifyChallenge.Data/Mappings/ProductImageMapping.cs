@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using ShopifyChallenge.Catalog.Domain;
+using Store.Catalog.Domain;
 
-namespace ShopifyChallenge.Catalog.Data.Mappings
+namespace Store.Catalog.Data.Mappings
 {
     public class ProductImageMapping : IEntityTypeConfiguration<ProductImage>
     {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Security.Claims;
 
-namespace ShopifyChallenge.WebAPI.ViewModels
+namespace Store.WebAPI.ViewModels
 {
     public interface IUser
     {

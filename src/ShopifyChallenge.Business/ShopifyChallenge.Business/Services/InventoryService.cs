@@ -1,11 +1,11 @@
-﻿using ShopifyChallenge.Catalog.Domain;
-using ShopifyChallenge.Core.Communication.Mediator;
-using ShopifyChallenge.Core.Communication.Messages.Notifications;
-using ShopifyChallenge.Core.DomainObjects.DTO;
+﻿using Store.Catalog.Domain;
+using Store.Core.Communication.Mediator;
+using Store.Core.Communication.Messages.Notifications;
+using Store.Core.DomainObjects.DTO;
 using System;
 using System.Threading.Tasks;
 
-namespace ShopifyChallenge.Catalog.Application.Services
+namespace Store.Catalog.Application.Services
 {
     public class InventoryService : IInventoryService
     {

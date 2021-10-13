@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using ShopifyChallenge.Catalog.Application.ViewModels;
-using ShopifyChallenge.Catalog.Domain;
+using Store.Catalog.Application.ViewModels;
+using Store.Catalog.Domain;
 
-namespace ShopifyChallenge.Catalog.Application.AutoMapper
+namespace Store.Catalog.Application.AutoMapper
 {
     public class DomainToViewModelMappingProfile : Profile
     {

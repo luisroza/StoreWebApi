@@ -1,12 +1,12 @@
 ﻿using AutoMapper;
-using ShopifyChallenge.Catalog.Domain;
-using ShopifyChallenge.Core.DomainObjects;
+using Store.Catalog.Domain;
+using Store.Core.DomainObjects;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using ShopifyChallenge.Catalog.Application.ViewModels;
+using Store.Catalog.Application.ViewModels;
 
-namespace ShopifyChallenge.Catalog.Application.Services
+namespace Store.Catalog.Application.Services
 {
     public class ProductService : IProductService
     {

@@ -4,10 +4,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
-using ShopifyChallenge.Core.Communication.Mediator;
-using ShopifyChallenge.Core.Communication.Messages.Notifications;
-using ShopifyChallenge.WebAPI.Extensions;
-using ShopifyChallenge.WebAPI.ViewModels;
+using Store.Core.Communication.Mediator;
+using Store.Core.Communication.Messages.Notifications;
+using Store.WebAPI.Extensions;
+using Store.WebAPI.ViewModels;
 using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
@@ -15,7 +15,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ShopifyChallenge.WebAPI.Controllers
+namespace Store.WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

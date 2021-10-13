@@ -1,9 +1,9 @@
-﻿using ShopifyChallenge.Core.Data;
+﻿using Store.Core.Data;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace ShopifyChallenge.Catalog.Domain
+namespace Store.Catalog.Domain
 {
     public interface IProductRepository : IRepository<Product>
     {

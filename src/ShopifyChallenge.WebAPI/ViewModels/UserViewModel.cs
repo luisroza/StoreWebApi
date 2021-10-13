@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace ShopifyChallenge.WebAPI.ViewModels
+namespace Store.WebAPI.ViewModels
 {
     public class RegisterUserViewModel
     {

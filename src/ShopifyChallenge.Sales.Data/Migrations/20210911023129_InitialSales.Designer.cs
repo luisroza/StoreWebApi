@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using ShopifyChallenge.Sales.Data;
+using Store.Sales.Data;
 
-namespace ShopifyChallenge.Sales.Data.Migrations
+namespace Store.Sales.Data.Migrations
 {
     [DbContext(typeof(SalesContext))]
     [Migration("20210911023129_InitialSales")]
@@ -22,7 +22,7 @@ namespace ShopifyChallenge.Sales.Data.Migrations
                 .HasAnnotation("Relational:Sequence:.OrderSequence", "'OrderSequence', '', '1000', '1', '', '', 'Int32', 'False'")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("ShopifyChallenge.Sales.Domain.Coupon", b =>
+            modelBuilder.Entity("Store.Sales.Domain.Coupon", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -65,7 +65,7 @@ namespace ShopifyChallenge.Sales.Data.Migrations
                     b.ToTable("Vouchers");
                 });
 
-            modelBuilder.Entity("ShopifyChallenge.Sales.Domain.Order", b =>
+            modelBuilder.Entity("Store.Sales.Domain.Order", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -104,7 +104,7 @@ namespace ShopifyChallenge.Sales.Data.Migrations
                     b.ToTable("Order");
                 });
 
-            modelBuilder.Entity("ShopifyChallenge.Sales.Domain.OrderLine", b =>
+            modelBuilder.Entity("Store.Sales.Domain.OrderLine", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -134,16 +134,16 @@ namespace ShopifyChallenge.Sales.Data.Migrations
                     b.ToTable("OrderLine");
                 });
 
-            modelBuilder.Entity("ShopifyChallenge.Sales.Domain.Order", b =>
+            modelBuilder.Entity("Store.Sales.Domain.Order", b =>
                 {
-                    b.HasOne("ShopifyChallenge.Sales.Domain.Coupon", "Coupon")
+                    b.HasOne("Store.Sales.Domain.Coupon", "Coupon")
                         .WithMany("Orders")
                         .HasForeignKey("CouponId");
                 });
 
-            modelBuilder.Entity("ShopifyChallenge.Sales.Domain.OrderLine", b =>
+            modelBuilder.Entity("Store.Sales.Domain.OrderLine", b =>
                 {
-                    b.HasOne("ShopifyChallenge.Sales.Domain.Order", "Order")
+                    b.HasOne("Store.Sales.Domain.Order", "Order")
                         .WithMany("OrderLines")
                         .HasForeignKey("OrderId")
                         .OnDelete(DeleteBehavior.Cascade)
