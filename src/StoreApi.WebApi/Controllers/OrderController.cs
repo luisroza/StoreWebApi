@@ -1,14 +1,13 @@
-﻿using System;
-using MediatR;
+﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using StoreApi.Core.Communication.Mediator;
 using StoreApi.Core.Communication.Messages.Notifications;
 using StoreApi.Sales.Application.Services;
-using StoreApi.WebAPI.ViewModels;
+using StoreApi.WebApi.ViewModels;
+using System;
 using System.Threading.Tasks;
-using StoreApi.Sales.Application.Commands;
 
-namespace StoreApi.WebAPI.Controllers
+namespace StoreApi.WebApi.Controllers
 {
     public class OrderController : BaseController
     {
@@ -37,8 +36,8 @@ namespace StoreApi.WebAPI.Controllers
             var order = await _orderService.GetById(id);
             if (order == null) return BadRequest();
 
-            var command = new FinalizeOrderCommand(id, UserId);
-            await _mediatorHandler.SendCommand(command);
+            //var command = new FinalizeOrderCommand(id, UserId);
+            //await _mediatorHandler.SendCommand(command);
 
             return IsValidOperation() ? BadRequest() : CustomResponse(order);
         }
@@ -50,8 +49,8 @@ namespace StoreApi.WebAPI.Controllers
             var order = await _orderService.GetById(id);
             if (order == null) return BadRequest();
 
-            var command = new CancelOrderCommand(id, UserId);
-            await _mediatorHandler.SendCommand(command);
+            //var command = new CancelOrderCommand(id, UserId);
+            //await _mediatorHandler.SendCommand(command);
 
             return IsValidOperation() ? BadRequest() : CustomResponse(order);
         }
@@ -63,8 +62,8 @@ namespace StoreApi.WebAPI.Controllers
             var order = await _orderService.GetById(id);
             if (order == null) return BadRequest();
 
-            var command = new CancelOrderReplenishInventoryCommand(id, UserId);
-            await _mediatorHandler.SendCommand(command);
+            //var command = new CancelOrderReplenishInventoryCommand(id, UserId);
+            //await _mediatorHandler.SendCommand(command);
 
             return IsValidOperation() ? BadRequest() : CustomResponse(order);
         }

@@ -3,14 +3,13 @@ using Microsoft.AspNetCore.Mvc;
 using StoreApi.Catalog.Application.Services;
 using StoreApi.Core.Communication.Mediator;
 using StoreApi.Core.Communication.Messages.Notifications;
-using StoreApi.Sales.Application.Commands;
 using StoreApi.Sales.Application.Services;
 using StoreApi.Sales.Application.ViewModels;
+using StoreApi.WebApi.ViewModels;
 using System;
 using System.Threading.Tasks;
-using StoreApi.WebAPI.ViewModels;
 
-namespace StoreApi.WebAPI.Controllers
+namespace StoreApi.WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -51,8 +50,8 @@ namespace StoreApi.WebAPI.Controllers
                 return CustomResponse();
             }
 
-            var command = new AddOrderLineCommand(UserId, product.Id, product.Name, quantity, product.Price);
-            await _mediatorHandler.SendCommand(command);
+            //var command = new AddOrderLineCommand(UserId, product.Id, product.Name, quantity, product.Price);
+            //await _mediatorHandler.SendCommand(command);
 
             return IsValidOperation() ? BadRequest() : CustomResponse(await GetCustomerCart());
         }
@@ -64,8 +63,8 @@ namespace StoreApi.WebAPI.Controllers
             var product = await _productService.GetById(id);
             if (product == null) return BadRequest();
 
-            var command = new RemoveOrderLineCommand(UserId, id);
-            await _mediatorHandler.SendCommand(command);
+            //var command = new RemoveOrderLineCommand(UserId, id);
+            //await _mediatorHandler.SendCommand(command);
 
             return IsValidOperation() ? BadRequest() : CustomResponse(await GetCustomerCart());
         }
@@ -77,8 +76,8 @@ namespace StoreApi.WebAPI.Controllers
             var product = await _productService.GetById(id);
             if (product == null) return BadRequest();
 
-            var command = new UpdateOrderLineCommand(UserId, id, quantity);
-            await _mediatorHandler.SendCommand(command);
+            //var command = new UpdateOrderLineCommand(UserId, id, quantity);
+            //await _mediatorHandler.SendCommand(command);
 
             return IsValidOperation() ? BadRequest() : CustomResponse(await GetCustomerCart());
         }
@@ -87,8 +86,8 @@ namespace StoreApi.WebAPI.Controllers
         [Route("apply-voucher")]
         public async Task<IActionResult> ApplyVoucher(string voucherCode)
         {
-            var command = new ApplyCouponCommand(UserId, voucherCode);
-            await _mediatorHandler.SendCommand(command);
+            //var command = new ApplyCouponCommand(UserId, voucherCode);
+            //await _mediatorHandler.SendCommand(command);
 
             return IsValidOperation() ? BadRequest() : CustomResponse(await GetCustomerCart());
         }
@@ -99,9 +98,9 @@ namespace StoreApi.WebAPI.Controllers
         {
             var cart = await _orderService.GetCustomerCart(UserId);
 
-            var command = new StartOrderCommand(cart.OrderId, UserId, cart.TotalPrice, cartViewModel.Payment.CardName,
-                cartViewModel.Payment.CardNumber, cartViewModel.Payment.CardExpirationDate, cartViewModel.Payment.CardVerificationCode);
-            await _mediatorHandler.SendCommand(command);
+            //var command = new StartOrderCommand(cart.OrderId, UserId, cart.TotalPrice, cartViewModel.Payment.CardName,
+            //    cartViewModel.Payment.CardNumber, cartViewModel.Payment.CardExpirationDate, cartViewModel.Payment.CardVerificationCode);
+            //await _mediatorHandler.SendCommand(command);
 
             return IsValidOperation() ? CustomResponse(cartViewModel) : CustomResponse(await GetCustomerCart());
         }

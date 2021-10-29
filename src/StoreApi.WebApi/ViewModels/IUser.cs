@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Security.Claims;
 
-namespace StoreApi.WebAPI.ViewModels
+namespace StoreApi.WebApi.ViewModels
 {
     public interface IUser
     {

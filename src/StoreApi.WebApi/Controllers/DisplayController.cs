@@ -5,9 +5,9 @@ using StoreApi.Core.Communication.Mediator;
 using StoreApi.Core.Communication.Messages.Notifications;
 using System;
 using System.Threading.Tasks;
-using StoreApi.WebAPI.ViewModels;
+using StoreApi.WebApi.ViewModels;
 
-namespace StoreApi.WebAPI.Controllers
+namespace StoreApi.WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

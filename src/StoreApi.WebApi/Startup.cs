@@ -2,12 +2,15 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.AzureAD.UI;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc.ApiExplorer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using StoreApi.WebAPI.Setup;
+using StoreApi.WebApi.Setup;
+using StoreApi.WebApi.Data;
 
-namespace StoreApi.WebAPI
+namespace StoreApi.WebApi
 {
     public class Startup
     {
@@ -28,20 +31,24 @@ namespace StoreApi.WebAPI
         }
 
         public IConfiguration Configuration { get; }
-
-        // This method gets called by the runtime. Use this method to add services to the container.
+        
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddAuthentication(AzureADDefaults.BearerAuthenticationScheme)
                 .AddAzureADBearer(options => Configuration.Bind("AzureAd", options));
-            services.AddControllers();
+
+            services.AddDbContext<AppDbContext>(options =>
+            {
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
+            });
+
             services.AddIdentityConfig(Configuration);
             services.AddApiConfig();
+            services.AddSwaggerConfig(); 
             services.RegisterServices();
         }
-
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IApiVersionDescriptionProvider provider)
         {
             if (env.IsDevelopment())
             {
@@ -49,7 +56,6 @@ namespace StoreApi.WebAPI
             }
 
             app.UseHttpsRedirection();
-
             app.UseRouting();
 
             app.UseAuthentication();
@@ -59,6 +65,8 @@ namespace StoreApi.WebAPI
             {
                 endpoints.MapControllers();
             });
+
+            app.UseSwaggerConfig(provider);
         }
     }
 }

@@ -5,14 +5,14 @@ using StoreApi.Catalog.Application.Services;
 using StoreApi.Catalog.Application.ViewModels;
 using StoreApi.Core.Communication.Mediator;
 using StoreApi.Core.Communication.Messages.Notifications;
-using StoreApi.WebAPI.Extensions;
-using StoreApi.WebAPI.ViewModels;
+using StoreApi.WebApi.Extensions;
+using StoreApi.WebApi.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 
-namespace StoreApi.WebAPI.Controllers
+namespace StoreApi.WebApi.Controllers
 {
     [Authorize]
     [Route("api/[controller]")]

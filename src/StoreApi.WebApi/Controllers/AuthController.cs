@@ -6,8 +6,8 @@ using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using StoreApi.Core.Communication.Mediator;
 using StoreApi.Core.Communication.Messages.Notifications;
-using StoreApi.WebAPI.Extensions;
-using StoreApi.WebAPI.ViewModels;
+using StoreApi.WebApi.Extensions;
+using StoreApi.WebApi.ViewModels;
 using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
@@ -15,28 +15,26 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StoreApi.WebAPI.Controllers
+namespace StoreApi.WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AuthenticationController : BaseController
+    public class AuthController : BaseController
     {
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly UserManager<IdentityUser> _userManager;
         private readonly AppSettings _appSettings;
-        private readonly ILogger _logger;
 
-        public AuthenticationController(INotificationHandler<DomainNotification> notification,
+        public AuthController(INotificationHandler<DomainNotification> notification,
                                 IMediatorHandler mediatorHandler,
                                 SignInManager<IdentityUser> signInManager,
                                 UserManager<IdentityUser> userManager,
                                 IOptions<AppSettings> appSettings,
-                                IUser user, ILogger<AuthenticationController> logger)
+                                IUser user)
                                     : base(notification, mediatorHandler, user)
         {
             _signInManager = signInManager;
             _userManager = userManager;
-            _logger = logger;
             _appSettings = appSettings.Value;
         }
 
@@ -75,7 +73,6 @@ namespace StoreApi.WebAPI.Controllers
 
             if (result.Succeeded)
             {
-                _logger.LogInformation("User " + loginUser.Email + " successful logged");
                 return CustomResponse(await GenerateJwt(loginUser.Email));
             }
             if (result.IsLockedOut)

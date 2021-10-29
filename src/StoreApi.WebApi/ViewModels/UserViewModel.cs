@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace StoreApi.WebAPI.ViewModels
+namespace StoreApi.WebApi.ViewModels
 {
     public class RegisterUserViewModel
     {

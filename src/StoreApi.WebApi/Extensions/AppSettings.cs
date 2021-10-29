@@ -1,4 +1,4 @@
-﻿namespace StoreApi.WebAPI.Extensions
+﻿namespace StoreApi.WebApi.Extensions
 {
     public class AppSettings
     {

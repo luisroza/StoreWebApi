@@ -5,22 +5,18 @@ using StoreApi.Catalog.Data;
 using StoreApi.Catalog.Data.Repository;
 using StoreApi.Catalog.Domain;
 using StoreApi.Core.Communication.Mediator;
-using StoreApi.Core.Communication.Messages.IntegrationEvents;
 using StoreApi.Core.Communication.Messages.Notifications;
 using StoreApi.Payment.Application.AntiCorruption;
-using StoreApi.Payment.Application.Events;
 using StoreApi.Payment.Application.Services;
 using StoreApi.Payment.Data;
 using StoreApi.Payment.Data.Repository;
 using StoreApi.Payment.Domain;
-using StoreApi.Sales.Application.Commands;
-using StoreApi.Sales.Application.Events;
 using StoreApi.Sales.Application.Services;
 using StoreApi.Sales.Data;
 using StoreApi.Sales.Data.Repository;
 using StoreApi.Sales.Domain;
 
-namespace StoreApi.WebAPI.Setup
+namespace StoreApi.WebApi.Setup
 {
     public static class DependencyInjection
     {
@@ -43,15 +39,6 @@ namespace StoreApi.WebAPI.Setup
             services.AddScoped<IOrderService, OrderService>();
             services.AddScoped<SalesContext>();
 
-            services.AddScoped<IRequestHandler<AddOrderLineCommand, bool>, OrderCommandHandler>();
-            services.AddScoped<IRequestHandler<UpdateOrderLineCommand, bool>, OrderCommandHandler>();
-            services.AddScoped<IRequestHandler<RemoveOrderLineCommand, bool>, OrderCommandHandler>();
-            services.AddScoped<IRequestHandler<ApplyCouponCommand, bool>, OrderCommandHandler>();
-
-            services.AddScoped<INotificationHandler<DraftOrderStartedEvent>, OrderEventHandler>();
-            services.AddScoped<INotificationHandler<UpdateOrderEvent>, OrderEventHandler>();
-            services.AddScoped<INotificationHandler<AddOrderLineEvent>, OrderEventHandler>();
-
             // Payment
             services.AddScoped<IPaymentRepository, PaymentRepository>();
             services.AddScoped<IPaymentService, PaymentService>();
@@ -59,7 +46,6 @@ namespace StoreApi.WebAPI.Setup
             services.AddScoped<IPayPalGateway, PayPalGateway>();
             services.AddScoped<IConfigurationManager, ConfigurationManager>();
             services.AddScoped<PaymentContext>();
-            services.AddScoped<INotificationHandler<OrderInventoryConfirmedEvent>, PaymentEventHandler>();
         }
     }
 }

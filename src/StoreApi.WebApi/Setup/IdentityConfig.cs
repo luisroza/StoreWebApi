@@ -4,23 +4,23 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
-using StoreApi.WebAPI.Data;
-using StoreApi.WebAPI.Extensions;
+using StoreApi.WebApi.Data;
+using StoreApi.WebApi.Extensions;
 using System.Text;
 
-namespace StoreApi.WebAPI.Setup
+namespace StoreApi.WebApi.Setup
 {
     public static class IdentityConfig
     {
         public static IServiceCollection AddIdentityConfig(this IServiceCollection services,
             IConfiguration configuration)
         {
-            services.AddDbContext<ApplicationDbContext>(options =>
+            services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 
             services.AddDefaultIdentity<IdentityUser>()
                 .AddRoles<IdentityRole>()
-                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddEntityFrameworkStores<AppDbContext>()
                 .AddDefaultTokenProviders();
 
             // JWT

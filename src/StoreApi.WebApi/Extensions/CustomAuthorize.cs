@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc.Filters;
 using System.Linq;
 using System.Security.Claims;
 
-namespace StoreApi.WebAPI.Extensions
+namespace StoreApi.WebApi.Extensions
 {
     public class CustomAuthorization
     {

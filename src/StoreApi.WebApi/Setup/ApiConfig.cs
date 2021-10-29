@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace StoreApi.WebAPI.Setup
+namespace StoreApi.WebApi.Setup
 {
     public static class ApiConfig
     {
