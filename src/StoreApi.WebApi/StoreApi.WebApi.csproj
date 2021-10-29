@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>aspnet-StoreApi.WebAPI-2F039B19-C37A-48A0-92E7-A6E4CFD70EDD</UserSecretsId>
+    <WebProject_DirectoryAccessLevelKey>0</WebProject_DirectoryAccessLevelKey>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.AzureAD.UI" Version="3.1.18" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.18" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.18" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.18" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.18" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.18">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="3.1.18" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.18" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.18">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\StoreApi.Catalog.Application\StoreApi.Catalog.Application.csproj" />
+    <ProjectReference Include="..\StoreApi.Catalog.Data\StoreApi.Catalog.Data.csproj" />
+    <ProjectReference Include="..\StoreApi.Catalog.Domain\StoreApi.Catalog.Domain.csproj" />
+    <ProjectReference Include="..\StoreApi.Core\StoreApi.Core.csproj" />
+    <ProjectReference Include="..\StoreApi.Payment.Application\StoreApi.Payment.Application.csproj" />
+    <ProjectReference Include="..\StoreApi.Payment.Data\StoreApi.Payment.Data.csproj" />
+    <ProjectReference Include="..\StoreApi.Payment.Domain\StoreApi.Payment.Domain.csproj" />
+    <ProjectReference Include="..\StoreApi.Sales.Application\StoreApi.Sales.Application.csproj" />
+    <ProjectReference Include="..\StoreApi.Sales.Data\StoreApi.Sales.Data.csproj" />
+    <ProjectReference Include="..\StoreApi.Sales.Domain\StoreApi.Sales.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
